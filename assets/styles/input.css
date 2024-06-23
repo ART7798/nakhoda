@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-display: swap;
+    font-family: "DanaRegular";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../_fonts/Dana-Regular.woff") format("woff");
+  }
+
+  @font-face {
+    font-display: swap;
+    font-family: "Dana";
+    font-style: normal;
+    font-weight: normal;
+    src: url("../_fonts/DanaFaNum-Medium.woff") format("woff");
+  }
+  h1 {
+    font-size: 50px;
+  }
+  h2 {
+    font-size: 40px;
+  }
+  h3 {
+    font-size: 32px;
+  }
+  h4 {
+    font-size: 28px;
+  }
+  h5 {
+    font-size: 24px;
+  }
+  h6 {
+    font-size: 20px;
+  }
+  small {
+    font-size: 14px;
+  }
+}
+
+body,
+* {
+  font-family: "Dana";
+}
