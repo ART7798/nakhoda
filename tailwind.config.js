@@ -17,6 +17,11 @@ module.exports = {
         tertiary: "#331209",
         darkText: "#252525",
       },
+      borderRadius: {
+        5: "5px",
+        7: "7px",
+        9: "9px",
+      },
       screens: {
         xs: "480px",
       },
