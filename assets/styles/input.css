@@ -52,16 +52,33 @@
 }
 
 :root {
-  /*colors*/--primary: ##fde900;
+  /*colors*/
+  --primary: ##fde900;
   --secondary: #76d4ec;
   --tertiary: #331209;
-  --darkText: #252525;
+  --body-bg: #fafafa;
+  --dark-text: #252525;
+  --input-text: #424242;
+  --input-bg: #f8f8f8;
+  --accordion-title: #171535;
+  --accordion-text: #818181;
+  --discount: #ed1c1c;
+
   /*transition*/
-  transition: all 0.3s ;
-  -webkit-transition: all 0.3s ;
-  -moz-transition: all 0.3s ;
-  -ms-transition: all 0.3s ;
-  -o-transition: all 0.3s ;
+  --transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+
+  /* border radius */
+  --border-radius-5: 5px;
+  --border-radius-7: 7px;
+  --border-radius-9: 9px;
+  --border-radius-10: 10px;
+
+  /* border */
+  --border-blue: 1px solid var(--secondary);
 }
 
 body,
@@ -69,7 +86,11 @@ body,
   font-family: "Dana";
 }
 
-.custom-border{
+body {
+  background-color: var(--body-bg);
+}
+
+.custom-border {
   border: 1px solid var(--secondary);
 }
 
@@ -85,6 +106,32 @@ body,
     padding-left: 0px;
     padding-right: 0px;
   }
+}
+
+.custom-input {
+  cursor: pointer;
+  border: 1px solid var(--secondary);
+  border-radius: var(--border-radius-5);
+  -webkit-border-radius: var(--border-radius-5);
+  -moz-border-radius: var(--border-radius-5);
+  -ms-border-radius: var(--border-radius-5);
+  -o-border-radius: var(--border-radius-5);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.custom-input::placeholder {
+  color: var(--input-text);
+}
+
+.custom-input:hover {
+  opacity: 0.8;
+}
+
+.custom-input:focus {
+  border: 2px solid var(--secondary);
 }
 
 /* 
