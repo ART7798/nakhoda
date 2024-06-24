@@ -6,13 +6,146 @@
     <link href="../assets/styles/output.css" rel="stylesheet" />
   </head>
   <body>
-    <header class="flex justify-between items-center">
-      <div class="menu flex gap-5 items-center">
-        <div class="flex gap-4"></div>
-        <div></div>
-        <div></div>
+    <!-- header -->
+    <header class="h-[113px] bg-white">
+      <div
+        class="header-content custom-container flex justify-between items-center w-full h-full"
+      >
+        <div class="menu flex gap-5 items-end">
+          <div class="flex gap-4 items-center">
+            <div class="navbar-toggle">
+              <svg
+                width="37"
+                height="37"
+                viewBox="0 0 37 37"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M30.8333 30.8333H6.16667C5.31567 30.8333 4.625 30.1442 4.625 29.2917C4.625 28.4391 5.31567 27.75 6.16667 27.75H30.8333C31.6843 27.75 32.375 28.4391 32.375 29.2917C32.375 30.1442 31.6843 30.8333 30.8333 30.8333Z"
+                  fill="#252525"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M30.8333 9.25008H6.16667C5.31567 9.25008 4.625 8.56096 4.625 7.70841C4.625 6.85587 5.31567 6.16675 6.16667 6.16675H30.8333C31.6843 6.16675 32.375 6.85587 32.375 7.70841C32.375 8.56096 31.6843 9.25008 30.8333 9.25008Z"
+                  fill="#252525"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M30.8333 20.0416H6.16667C5.31567 20.0416 4.625 19.3525 4.625 18.4999C4.625 17.6474 5.31567 16.9583 6.16667 16.9583H30.8333C31.6843 16.9583 32.375 17.6474 32.375 18.4999C32.375 19.3525 31.6843 20.0416 30.8333 20.0416Z"
+                  fill="#252525"
+                />
+              </svg>
+            </div>
+            <div class="bg-darkText w-px h-7"></div>
+          </div>
+          <div class="flex items-start gap-1">
+            <h5 class="text-darkText"> 07633383379</h5>
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.4183 5.99C13.9422 5.90206 13.505 6.20586 13.4144 6.67054C13.3238 7.13522 13.6285 7.58891 14.0916 7.67984C15.4859 7.95166 16.5624 9.03091 16.8353 10.43C16.913 10.8327 17.2675 11.1265 17.6759 11.1265C17.7306 11.1265 17.7854 11.1215 17.8412 11.1115C18.3043 11.0186 18.609 10.5659 18.5184 10.1002C18.1111 8.01062 16.5027 6.39672 14.4183 5.99Z"
+                fill="#76D4EC"
+              />
+              <path
+                d="M14.356 2.50793C14.1329 2.47595 13.9088 2.54191 13.7305 2.68381C13.5473 2.82771 13.4328 3.03557 13.4079 3.26841C13.3551 3.73908 13.6947 4.16479 14.1648 4.21776C17.4064 4.57951 19.926 7.10477 20.2905 10.3565C20.3393 10.7922 20.7048 11.121 21.141 11.121C21.1739 11.121 21.2058 11.119 21.2386 11.115C21.4667 11.09 21.6699 10.9771 21.8133 10.7972C21.9557 10.6174 22.0204 10.3935 21.9945 10.1647C21.5404 6.10746 18.4003 2.95862 14.356 2.50793Z"
+                fill="#76D4EC"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0317 13.4724C15.0208 17.4604 15.9258 12.8467 18.4656 15.3848C20.9143 17.8328 22.3216 18.3232 19.2192 21.4247C18.8306 21.737 16.3616 25.4943 7.6846 16.8197C-0.993478 8.144 2.76158 5.67244 3.07397 5.28395C6.18387 2.17385 6.66586 3.58938 9.11449 6.03733C11.6544 8.5765 7.04266 9.48441 11.0317 13.4724Z"
+                fill="#76D4EC"
+              />
+            </svg>
+          </div>
+          <div
+            class="sign text-center py-2 px-6 custom-border text-darkText rounded-5 max-h-[38px] flex justify-center items-center"
+          >
+            ورود/ثبت نام
+          </div>
+        </div>
+        <div class="logo w-16 h-20 sm:w-20 sm:h-[90px]">
+          <a href="/">
+            <img src="../assets/images/logo-1.png" alt="nakhoda-logo" />
+          </a>
+        </div>
       </div>
-      <div class="logo"></div>
     </header>
+
+    <!-- main -->
+    <main>
+      <!-- hero -->
+      <section
+        class="bg-cover bg-center"
+        style="background-image: url('../assets/images/hero.jpg')"
+      >
+        <div class="custom-container pt-16 md:pt-[92px] pb-[30px]">
+          <!-- hero-text-content -->
+          <div class="hero-text-content">
+            <h3 class="font-extrabold">لورم ایپسوم متن ساختگی با تولید</h3>
+            <h5 class="mt-9 text-justify w-[90%] max-w-[650px]">
+              لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
+              استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
+              در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد
+              نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد،
+            </h5>
+          </div>
+          <!-- hero-search-box -->
+          <div
+            class="mt-[66px] flex flex-col gap-[50px] px-5 pt-4 pb-6 bg-white border border-white rounded-5"
+          >
+          <!-- search tab links -->
+            <div class="search-tab-links flex gap-2.5">
+              <button
+                class="search-tab-link py-8 px-3 font-medium rounded-5 text-2xl text-[#bbb]"
+                onclick="openSearchTab(event, 'search-tab1')"
+              >
+                Tab 1
+              </button>
+              <button
+                class="search-tab-link py-8 px-3 font-medium rounded-5 text-2xl text-[#bbb]"
+                onclick="openSearchTab(event, 'search-tab2')"
+              >
+                Tab 2
+              </button>
+              <button
+                class="search-tab-link py-8 px-3 font-medium rounded-5 text-2xl text-[#bbb]"
+                onclick="openSearchTab(event, 'search-tab3')"
+              >
+                Tab 3
+              </button>
+            </div>
+ <!-- search tab contents -->
+            <div class="p-4">
+        <div id="search-tab1" class="search-tab-content">
+          <h2 class="text-xl font-bold">Tab 1 Content</h2>
+          <p class="mt-2">Content for Tab 1 goes here.</p>
+        </div>
+        <div id="search-tab2" class="search-tab-content hidden">
+          <h2 class="text-xl font-bold">Tab 2 Content</h2>
+          <p class="mt-2">Content for Tab 2 goes here.</p>
+        </div>
+        <div id="search-tab3" class="search-tab-content hidden">
+          <h2 class="text-xl font-bold">Tab 3 Content</h2>
+          <p class="mt-2">Content for Tab 3 goes here.</p>
+        </div>
+      </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- javascript -->
+    <script src="../assets/js/main.js"></script>
   </body>
 </html>

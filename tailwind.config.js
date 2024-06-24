@@ -10,8 +10,22 @@ module.exports = {
         15: "15px",
         13: "13px",
         12: "12px",
+        h1: "50px",
+        h2: "40px",
+        h3: "32px",
+        h4: "24px",
+        h5: "20px",
+        h6: "18px",
       },
-      color: {
+      fontWeight: {
+        h1: "800",
+        h2: "800",
+        h3: "700",
+        h4: "600",
+        h5: "500",
+        h6: "500",
+      },
+      colors: {
         primary: "var(--primary)",
         secondary: "var(--secondary)",
         tertiary: "var(--tertiary)",
@@ -22,6 +36,9 @@ module.exports = {
         accordionTitle: "var(--accordion-title)",
         accordionText: "var(--accordion-text)",
         discount: "var(--discount)",
+      },
+      backgroundImage: {
+        "gradient-linear": "var(--gradient-linear)",
       },
       borderRadius: {
         5: "var(--border-radius-5)",
