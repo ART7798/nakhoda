@@ -7,6 +7,7 @@ module.exports = {
         dana: ["DanaRegular"],
       },
       fontSize: {
+        32: "32px",
         15: "15px",
         13: "13px",
         12: "12px",
@@ -54,6 +55,7 @@ module.exports = {
       },
       screens: {
         xs: "480px",
+        bml: "900px",
       },
     },
   },

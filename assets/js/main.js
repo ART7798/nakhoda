@@ -18,3 +18,24 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+try {
+  document.addEventListener("DOMContentLoaded", function () {
+    const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+
+    dropdownToggles.forEach((toggle) => {
+      toggle.addEventListener("click", function () {
+        const dropdownContent = this.nextElementSibling;
+        const arrow = this.querySelector(".dropdown-arrow");
+
+        // Toggle the hidden class
+        dropdownContent.classList.toggle("hidden");
+        dropdownContent.classList.toggle("flex");
+        // dropdownContent.classList.toggle("flex-col");
+
+        // Rotate the arrow
+        arrow.classList.toggle("open");
+      });
+    });
+  });
+} catch (error) {}

@@ -82,13 +82,43 @@
   --border-radius-10: 10px;
 
   /* border */
-  --border-blue: 1px solid var(--secondary);
+  --border-primary: 1px solid var(--primary);
+  --border-secondary: 1px solid var(--secondary);
+
+  /* outline */
+  --outline-primary: 1px solid var(--primary);
+  --outline-secondary: 1px solid var(--secondary);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body,
+* {
+  font-family: "Dana";
+}
+
+body {
+  background-color: var(--body-bg);
+}
+
+/* remove default styles from input */
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Reset common input styles */
+  border: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  background: none;
+  box-shadow: none;
+  font: inherit;
 }
 
 /* h tags classes */
@@ -117,17 +147,24 @@
   font-weight: 500;
 }
 
-body,
-* {
-  font-family: "Dana";
-}
-
-body {
-  background-color: var(--body-bg);
+.absolute-perfect-center {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
 }
 
 .custom-border {
-  border: var(--border-blue);
+  border: var(--border-secondary);
+}
+
+.custom-outline {
+  outline: var(--outline-secondary);
 }
 
 .custom-container {
@@ -136,6 +173,11 @@ body {
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
+}
+@media only screen and (min-width: 1280px) {
+  .custom-container {
+    width: 1280px;
+  }
 }
 @media only screen and (min-width: 1300px) {
   .custom-container {
@@ -146,7 +188,8 @@ body {
 
 .custom-input {
   cursor: pointer;
-  border: 1px solid var(--secondary);
+  background-color: var(--input-bg);
+  outline: 1px solid var(--secondary);
   border-radius: var(--border-radius-5);
   -webkit-border-radius: var(--border-radius-5);
   -moz-border-radius: var(--border-radius-5);
@@ -163,28 +206,97 @@ body {
 }
 
 .custom-input:hover {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 
 .custom-input:focus {
-  border: 2px solid var(--secondary);
+  outline: 2px solid var(--secondary);
 }
 
+.primary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #2a2a2a;
+  cursor: pointer;
+  outline: var(--outline-primary);
+  background-color: var(--primary);
+  border-radius: var(--border-radius-5);
+  -webkit-border-radius: var(--border-radius-5);
+  -moz-border-radius: var(--border-radius-5);
+  -ms-border-radius: var(--border-radius-5);
+  -o-border-radius: var(--border-radius-5);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.primary-btn:hover {
+  background-color: var(--secondary);
+  outline: var(--outline-secondary) !important;
+}
+.secondary-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #2a2a2a;
+  cursor: pointer;
+  outline: var(--outline-secondary);
+  background-color: var(--secondary);
+  border-radius: var(--border-radius-5);
+  -webkit-border-radius: var(--border-radius-5);
+  -moz-border-radius: var(--border-radius-5);
+  -ms-border-radius: var(--border-radius-5);
+  -o-border-radius: var(--border-radius-5);
+  transition: var(--transition);
+}
+.secondary-btn:hover {
+  background-color: var(--primary);
+  outline: var(--outline-primary) !important;
+}
 
 /* hero */
-.search-tab-active{
+.search-tab-active {
+  position: relative;
   color: #2a2a2a;
-  border-bottom: 3px solid var(--gradient-linear);
   border-radius: 0;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   -ms-border-radius: 0;
   -o-border-radius: 0;
 }
+.search-tab-active::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gradient-linear);
+}
 
+.dropdown-toggle {
+  cursor: pointer;
+}
 
-
-
+.dropdown-arrow.open {
+  transform: rotate(180deg);
+}
+.dropdonw-content-item {
+  padding: 12px 16px;
+  cursor: pointer;
+  border-radius: var(--border-radius-5);
+  -webkit-border-radius: var(--border-radius-5);
+  -moz-border-radius: var(--border-radius-5);
+  -ms-border-radius: var(--border-radius-5);
+  -o-border-radius: var(--border-radius-5);
+}
+.dropdonw-content-item:hover {
+  background-color: #f3f3f3;
+}
 
 /* 
 @media only screen and (max-width: 480px) {
