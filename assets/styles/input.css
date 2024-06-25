@@ -158,6 +158,26 @@ input {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
+.absolute-horizontally-center {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.absolute-vertically-center {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
 
 .custom-border {
   border: var(--border-secondary);
@@ -298,23 +318,40 @@ input {
   background-color: #f3f3f3;
 }
 
-/* 
-@media only screen and (max-width: 480px) {
-
+/* flights */
+.flight-tab-active {
+  color: var(--tertiary);
+  border-bottom: 2px solid var(--tertiary);
 }
-@media only screen and (max-width: 640px) {
 
+.flight-card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, #040404 0%, rgba(41, 41, 41, 0) 100%);
 }
-@media only screen and (max-width: 768px) {
 
+/* latest tours */
+.latest-tours-title {
+  position: relative;
 }
-@media only screen and (max-width: 1024px) {
-
+.latest-tours-title::after {
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 4px;
+  right: 0;
+  bottom: 10%;
+  background-color: var(--tertiary);
 }
-@media only screen and (max-width: 1280px) {
 
+.tour-tab-active {
+  color: var(--tertiary);
+  font-weight: bold;
 }
-@media only screen and (max-width: 1536px) {
-
-} 
-*/
