@@ -759,6 +759,38 @@ small {
   right: 0.25rem;
 }
 
+.bottom-3 {
+  bottom: 0.75rem;
+}
+
+.right-5 {
+  right: 1.25rem;
+}
+
+.bottom-6 {
+  bottom: 1.5rem;
+}
+
+.left-5 {
+  left: 1.25rem;
+}
+
+.bottom-\[\] {
+  bottom: ;
+}
+
+.bottom-\[21px\] {
+  bottom: 21px;
+}
+
+.-bottom-\[21px\] {
+  bottom: -21px;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -769,6 +801,10 @@ small {
 
 .z-10 {
   z-index: 10;
+}
+
+.z-\[2\] {
+  z-index: 2;
 }
 
 .float-start {
@@ -878,6 +914,10 @@ small {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mt-px {
+  margin-top: 1px;
 }
 
 .box-border {
@@ -1013,6 +1053,16 @@ small {
   height: 38px;
 }
 
+.size-\[\] {
+  width: ;
+  height: ;
+}
+
+.size-\[42px\] {
+  width: 42px;
+  height: 42px;
+}
+
 .h-14 {
   height: 3.5rem;
 }
@@ -1029,8 +1079,16 @@ small {
   height: 113px;
 }
 
+.h-\[223px\] {
+  height: 223px;
+}
+
 .h-\[375px\] {
   height: 375px;
+}
+
+.h-\[415px\] {
+  height: 415px;
 }
 
 .h-\[70\%\] {
@@ -1039,6 +1097,10 @@ small {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[52px\] {
+  height: 52px;
 }
 
 .max-h-\[38px\] {
@@ -1676,6 +1738,10 @@ small {
   gap: 2.5rem;
 }
 
+.gap-11 {
+  gap: 2.75rem;
+}
+
 .gap-15 {
   gap: 15px;
 }
@@ -1712,8 +1778,8 @@ small {
   gap: 88px;
 }
 
-.gap-11 {
-  gap: 2.75rem;
+.gap-2\.5 {
+  gap: 0.625rem;
 }
 
 .gap-y-2 {
@@ -2202,6 +2268,19 @@ small {
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
 }
 
+.border-\[\] {
+  border-color: ;
+}
+
+.border-\[\#\] {
+  border-color: #;
+}
+
+.border-\[\#4e4e4e\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(78 78 78 / var(--tw-border-opacity));
+}
+
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
   --tw-bg-opacity: 1;
   background-color: rgb(255 0 0 / var(--tw-bg-opacity));
@@ -2368,6 +2447,10 @@ small {
   padding: 14px;
 }
 
+.p-5 {
+  padding: 1.25rem;
+}
+
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -2454,6 +2537,10 @@ small {
   padding-top: 1rem;
 }
 
+.pb-7 {
+  padding-bottom: 1.75rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2528,6 +2615,23 @@ small {
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+
+.text-13 {
+  font-size: 13px;
+}
+
+.text-15 {
+  font-size: 15px;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.text-\[11px\] {
+  font-size: 11px;
 }
 
 .font-bold {
@@ -2673,6 +2777,10 @@ small {
   color: var(--primary);
 }
 
+.text-secondary {
+  color: var(--secondary);
+}
+
 .text-tertiary {
   color: var(--tertiary);
 }
@@ -2682,8 +2790,65 @@ small {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-secondary {
-  color: var(--secondary);
+.text-discount {
+  color: var(--discount);
+}
+
+.text-\[4E4E4E\] {
+  color: 4E4E4E;
+}
+
+.text-\[\@4E4E4E\] {
+  color: @4E4E4E;
+}
+
+.text-\[\#4E4E4E\] {
+  --tw-text-opacity: 1;
+  color: rgb(78 78 78 / var(--tw-text-opacity));
+}
+
+.text-\[\#343434\] {
+  --tw-text-opacity: 1;
+  color: rgb(52 52 52 / var(--tw-text-opacity));
+}
+
+.text-\[a\] {
+  color: a;
+}
+
+.text-\[a9a9a9\] {
+  color: a9a9a9;
+}
+
+.text-\[\#a9a9a9\] {
+  --tw-text-opacity: 1;
+  color: rgb(169 169 169 / var(--tw-text-opacity));
+}
+
+.text-\[\] {
+  color: ;
+}
+
+.text-\[\#\] {
+  color: #;
+}
+
+.text-\[\#4a4a4a\] {
+  --tw-text-opacity: 1;
+  color: rgb(74 74 74 / var(--tw-text-opacity));
+}
+
+.text-\[\#4e\] {
+  color: #4e;
+}
+
+.text-\[\#4e4e4e\] {
+  --tw-text-opacity: 1;
+  color: rgb(78 78 78 / var(--tw-text-opacity));
+}
+
+.text-\[\#4e\62A\648\645\627\646 4e4e\] {
+  color: #4eتومان4e4e;
 }
 
 .underline {
@@ -3006,14 +3171,14 @@ small {
   transition-duration: 150ms;
 }
 
-.transition-transform {
-  transition-property: transform;
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
 
-.transition-colors {
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+.transition-transform {
+  transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
@@ -3408,6 +3573,25 @@ input {
   font-weight: bold;
 }
 
+/* hotels */
+
+.hotel-card-image-container::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -3470,12 +3654,12 @@ input {
   font-weight: 700;
 }
 
-.hover\:text-secondary:hover {
-  color: var(--secondary);
-}
-
 .hover\:text-primary:hover {
   color: var(--primary);
+}
+
+.hover\:text-secondary:hover {
+  color: var(--secondary);
 }
 
 .hover\:opacity-50:hover {
@@ -3543,6 +3727,10 @@ input {
 
   .sm\:w-\[calc\(50\%-3px\)\] {
     width: calc(50% - 3px);
+  }
+
+  .sm\:w-\[calc\(50\%-6px\)\] {
+    width: calc(50% - 6px);
   }
 
   .sm\:flex-row {
@@ -3704,6 +3892,10 @@ input {
 
   .xl\:w-\[250px\] {
     width: 250px;
+  }
+
+  .xl\:w-\[310px\] {
+    width: 310px;
   }
 
   .xl\:w-\[315px\] {

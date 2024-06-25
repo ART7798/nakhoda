@@ -1124,8 +1124,6 @@
                   <h6>مشاهده</h6>
                 </a>
               </div>
-
-
             </div>
 
             <div id="tour-tab2" class="tour-tab-content hidden">
@@ -1144,27 +1142,323 @@
         </div>
       </section>
 
-       <!-- hotels -->
+      <!-- hotels -->
       <section class="flex justify-center mt-[110px]">
         <div class="custom-container flex flex-col gap-11">
           <!-- hotels title -->
           <div class="w-full flex justify-between items-center">
             <h3
-            class="font-medium leading-[30px] text-xl md:text-2xl lg:text-32 text-black"
-          >
-            هتل های موجود
-          </h3>
-          <a href="#" class="text-base sm:text-xl font-medium text-secondary transition-colors duration-300 hover:text-primary">مشاهده بیشتر</a>
+              class="font-medium leading-[30px] text-xl md:text-2xl lg:text-32 text-black"
+            >
+              هتل های موجود
+            </h3>
+            <a
+              href="#"
+              class="text-base sm:text-xl font-medium text-secondary transition-colors duration-300 hover:text-primary"
+              >مشاهده بیشتر</a
+            >
           </div>
 
           <!-- hotel items -->
-           <div class='flex gap-1.5 flex-wrap xl:flex-nowrap'></div>
-           
-       
+          <div class="flex gap-3 flex-wrap xl:flex-nowrap">
+            <!-- single hotel card -->
+            <div
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+            >
+              <div class="hotel-card-image-container relative w-full h-[223px]">
+                <div
+                  class="flex gap-1 items-center absolute bottom-3 right-5 z-[2]"
+                >
+                  <svg
+                    width="13"
+                    height="14"
+                    viewBox="0 0 13 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.596436 5.87136C0.596436 2.63166 3.22474 0 6.46027 0C9.68635 0 12.3146 2.63166 12.3146 5.87136C12.3146 9.89011 7.73173 13.8519 6.46027 13.8519C5.17933 13.8519 0.596436 9.89011 0.596436 5.87136ZM4.42977 5.82386C4.42977 6.94493 5.34063 7.85698 6.46027 7.85698C7.57991 7.85698 8.4908 6.94493 8.4908 5.82386C8.4908 4.70279 7.57991 3.79073 6.46027 3.79073C5.34063 3.79073 4.42977 4.70279 4.42977 5.82386Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <small class="font-medium text-13 text-white">لندن</small>
+                </div>
+                <div
+                  class="absolute -bottom-[21px] left-5 flex justify-center items-center bg-white rounded-full size-[42px] z-[2]"
+                >
+                  <small class="text-15 font-medium text-discount">%50</small>
+                </div>
+                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+              </div>
+              <!-- hotel card content -->
+              <div class="p-5 flex flex-col gap-2.5">
+                <div class="flex gap-1 items-center">
+                  <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
+                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                    deluxe
+                  </p>
+                </div>
+                <div class="flex gap-1 items-start">
+                  <p class="">
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                        fill="#FFBF1C"
+                      />
+                    </svg>
+                  </p>
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
+                </div>
+
+                <div class="flex justify-between items-center">
+                  <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
+                  <div class="flex gap-1 items-center mr-auto">
+                    <p class="text-[#4e4e4e]">4/800/000</p>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
+
+                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              </div>
+                
+
+            </div>
+            <!-- single hotel card -->
+            <div
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+            >
+              <div class="hotel-card-image-container relative w-full h-[223px]">
+                <div
+                  class="flex gap-1 items-center absolute bottom-3 right-5 z-[2]"
+                >
+                  <svg
+                    width="13"
+                    height="14"
+                    viewBox="0 0 13 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.596436 5.87136C0.596436 2.63166 3.22474 0 6.46027 0C9.68635 0 12.3146 2.63166 12.3146 5.87136C12.3146 9.89011 7.73173 13.8519 6.46027 13.8519C5.17933 13.8519 0.596436 9.89011 0.596436 5.87136ZM4.42977 5.82386C4.42977 6.94493 5.34063 7.85698 6.46027 7.85698C7.57991 7.85698 8.4908 6.94493 8.4908 5.82386C8.4908 4.70279 7.57991 3.79073 6.46027 3.79073C5.34063 3.79073 4.42977 4.70279 4.42977 5.82386Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <small class="font-medium text-13 text-white">لندن</small>
+                </div>
+                <div
+                  class="absolute -bottom-[21px] left-5 flex justify-center items-center bg-white rounded-full size-[42px] z-[2]"
+                >
+                  <small class="text-15 font-medium text-discount">%50</small>
+                </div>
+                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+              </div>
+              <!-- hotel card content -->
+              <div class="p-5 flex flex-col gap-2.5">
+                <div class="flex gap-1 items-center">
+                  <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
+                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                    deluxe
+                  </p>
+                </div>
+                <div class="flex gap-1 items-start">
+                  <p class="">
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                        fill="#FFBF1C"
+                      />
+                    </svg>
+                  </p>
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
+                </div>
+
+                <div class="flex justify-between items-center">
+                  <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
+                  <div class="flex gap-1 items-center mr-auto">
+                    <p class="text-[#4e4e4e]">4/800/000</p>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
+
+                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              </div>
+                
+
+            </div>
+            <!-- single hotel card -->
+            <div
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+            >
+              <div class="hotel-card-image-container relative w-full h-[223px]">
+                <div
+                  class="flex gap-1 items-center absolute bottom-3 right-5 z-[2]"
+                >
+                  <svg
+                    width="13"
+                    height="14"
+                    viewBox="0 0 13 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.596436 5.87136C0.596436 2.63166 3.22474 0 6.46027 0C9.68635 0 12.3146 2.63166 12.3146 5.87136C12.3146 9.89011 7.73173 13.8519 6.46027 13.8519C5.17933 13.8519 0.596436 9.89011 0.596436 5.87136ZM4.42977 5.82386C4.42977 6.94493 5.34063 7.85698 6.46027 7.85698C7.57991 7.85698 8.4908 6.94493 8.4908 5.82386C8.4908 4.70279 7.57991 3.79073 6.46027 3.79073C5.34063 3.79073 4.42977 4.70279 4.42977 5.82386Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <small class="font-medium text-13 text-white">لندن</small>
+                </div>
+                <div
+                  class="absolute -bottom-[21px] left-5 flex justify-center items-center bg-white rounded-full size-[42px] z-[2]"
+                >
+                  <small class="text-15 font-medium text-discount">%50</small>
+                </div>
+                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+              </div>
+              <!-- hotel card content -->
+              <div class="p-5 flex flex-col gap-2.5">
+                <div class="flex gap-1 items-center">
+                  <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
+                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                    deluxe
+                  </p>
+                </div>
+                <div class="flex gap-1 items-start">
+                  <p class="">
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                        fill="#FFBF1C"
+                      />
+                    </svg>
+                  </p>
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
+                </div>
+
+                <div class="flex justify-between items-center">
+                  <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
+                  <div class="flex gap-1 items-center mr-auto">
+                    <p class="text-[#4e4e4e]">4/800/000</p>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
+
+                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              </div>
+                
+
+            </div>
+            <!-- single hotel card -->
+            <div
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+            >
+              <div class="hotel-card-image-container relative w-full h-[223px]">
+                <div
+                  class="flex gap-1 items-center absolute bottom-3 right-5 z-[2]"
+                >
+                  <svg
+                    width="13"
+                    height="14"
+                    viewBox="0 0 13 14"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      clip-rule="evenodd"
+                      d="M0.596436 5.87136C0.596436 2.63166 3.22474 0 6.46027 0C9.68635 0 12.3146 2.63166 12.3146 5.87136C12.3146 9.89011 7.73173 13.8519 6.46027 13.8519C5.17933 13.8519 0.596436 9.89011 0.596436 5.87136ZM4.42977 5.82386C4.42977 6.94493 5.34063 7.85698 6.46027 7.85698C7.57991 7.85698 8.4908 6.94493 8.4908 5.82386C8.4908 4.70279 7.57991 3.79073 6.46027 3.79073C5.34063 3.79073 4.42977 4.70279 4.42977 5.82386Z"
+                      fill="white"
+                    />
+                  </svg>
+                  <small class="font-medium text-13 text-white">لندن</small>
+                </div>
+                <div
+                  class="absolute -bottom-[21px] left-5 flex justify-center items-center bg-white rounded-full size-[42px] z-[2]"
+                >
+                  <small class="text-15 font-medium text-discount">%50</small>
+                </div>
+                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+              </div>
+              <!-- hotel card content -->
+              <div class="p-5 flex flex-col gap-2.5">
+                <div class="flex gap-1 items-center">
+                  <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
+                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                    deluxe
+                  </p>
+                </div>
+                <div class="flex gap-1 items-start">
+                  <p class="">
+                    <svg
+                      width="20"
+                      height="19"
+                      viewBox="0 0 20 19"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                        fill="#FFBF1C"
+                      />
+                    </svg>
+                  </p>
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
+                </div>
+
+                <div class="flex justify-between items-center">
+                  <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
+                  <div class="flex gap-1 items-center mr-auto">
+                    <p class="text-[#4e4e4e]">4/800/000</p>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
+
+                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              </div>
+                
+
+            </div>
+
+
+
+          </div>
         </div>
       </section>
-
-
     </main>
 
     <div class="mb-[400px] bml:bg-rose-400 bg-blue-400"></div>
