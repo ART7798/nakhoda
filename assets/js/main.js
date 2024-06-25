@@ -89,3 +89,62 @@ try {
 } catch (error) {
   console.log(error);
 }
+
+// question tabs
+try {
+  function openQuestionTab(event, tabId) {
+    // Hide all tab content
+    const tabContents = document.querySelectorAll(".question-tab-content");
+    tabContents.forEach((content) => content.classList.add("hidden"));
+
+    // Remove active class from all tab links
+    const tabLinks = document.querySelectorAll(".question-tab-link");
+    tabLinks.forEach((link) => link.classList.remove("question-tab-active"));
+
+    // Show the selected tab content and add active class to the corresponding tab link
+    document.getElementById(tabId).classList.remove("hidden");
+    event.currentTarget.classList.add("question-tab-active");
+  }
+
+  // Set default tab
+  document.querySelector(".question-tab-link").click();
+} catch (error) {
+  console.log(error);
+}
+
+
+// questions accordion
+  try {
+    document.addEventListener("DOMContentLoaded", () => {
+      const accordionHeaders = document.querySelectorAll(".accordion-header");
+
+      accordionHeaders.forEach((header) => {
+        header.addEventListener("click", () => {
+          const currentlyOpenItem = document.querySelector(
+            ".accordion-content:not(.hidden)"
+          );
+          const currentContent = header.nextElementSibling;
+          const svgWrapper = header.querySelector(".svg-wrapper");
+
+          if (currentlyOpenItem && currentlyOpenItem !== currentContent) {
+            currentlyOpenItem.classList.add("hidden");
+            const openSvgWrapper =
+              currentlyOpenItem.previousElementSibling.querySelector(
+                ".svg-wrapper"
+              );
+            openSvgWrapper.classList.remove("-rotate-90");
+          }
+
+          if (currentContent.classList.contains("hidden")) {
+            currentContent.classList.remove("hidden");
+            svgWrapper.classList.add("-rotate-90");
+          } else {
+            currentContent.classList.add("hidden");
+            svgWrapper.classList.remove("-rotate-90");
+          }
+        });
+      });
+    });
+  } catch (error) {
+    console.error("Error initializing accordion:", error);
+  }

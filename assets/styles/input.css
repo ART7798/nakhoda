@@ -373,3 +373,21 @@ input {
     rgba(0, 0, 0, 0) 100%
   );
 }
+
+/* common questions */
+.question-tab-active {
+  color: var(--tertiary);
+  border-bottom: 4px solid var(--tertiary);
+  font-weight: 600;
+}
+
+/* .rotate-90 {
+            transform: rotate(90deg);
+        } */
+.transition-transform {
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}

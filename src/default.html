@@ -108,7 +108,7 @@
               لورم ایپسوم متن ساختگی با تولید
             </h3>
             <h5
-              class="mt-4 md:mt-9 text-justify w-[90%] max-w-[650px] text-base md:text-xl"
+              class="mt-4 md:mt-9 text-justify w-full sm:w-[90%] max-w-[650px] text-base md:text-xl"
             >
               لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با
               استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله
@@ -118,7 +118,7 @@
           </div>
           <!-- hero-search-box -->
           <div
-            class="mt-[66px] flex flex-col gap-[50px] px-5 pt-4 pb-6 bg-white border border-white rounded-5"
+            class="mt-[66px] flex flex-col gap-[50px] px-2 lg:px-5 pt-4 pb-6 bg-white border border-white rounded-5"
           >
             <!-- search tab links -->
             <div
@@ -460,7 +460,7 @@
             >
               <!-- single flight card -->
               <div
-                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] relative rounded-5 overflow-hidden"
+                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
                   src="../assets/images/Flight.png"
@@ -511,7 +511,7 @@
               </div>
               <!-- single flight card -->
               <div
-                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] relative rounded-5 overflow-hidden"
+                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
                   src="../assets/images/Flight.png"
@@ -562,7 +562,7 @@
               </div>
               <!-- single flight card -->
               <div
-                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] relative rounded-5 overflow-hidden"
+                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
                   src="../assets/images/Flight.png"
@@ -613,7 +613,7 @@
               </div>
               <!-- single flight card -->
               <div
-                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] relative rounded-5 overflow-hidden"
+                class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
                   src="../assets/images/Flight.png"
@@ -1160,10 +1160,10 @@
           </div>
 
           <!-- hotel items -->
-          <div class="flex gap-3 flex-wrap xl:flex-nowrap">
+          <div class="flex gap-3 w-full flex-wrap xl:flex-nowrap">
             <!-- single hotel card -->
             <div
-              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] bml:w-[calc(33%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
             >
               <div class="hotel-card-image-container relative w-full h-[223px]">
                 <div
@@ -1190,53 +1190,67 @@
                 >
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
-                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+                <img
+                  src="../assets/images/Hotel.png"
+                  alt="hotel-image"
+                  width="310"
+                  height="223"
+                  class="w-full h-full"
+                />
               </div>
               <!-- hotel card content -->
               <div class="p-5 flex flex-col gap-2.5">
                 <div class="flex gap-1 items-center">
                   <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
-                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                  <p
+                    class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]"
+                  >
                     deluxe
                   </p>
                 </div>
-                <div class="flex gap-1 items-start">
-                  <p class="">
-                    <svg
-                      width="20"
-                      height="19"
-                      viewBox="0 0 20 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
-                        fill="#FFBF1C"
-                      />
-                    </svg>
+                <div class="flex gap-1 items-center">
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                      fill="#FFBF1C"
+                    />
+                  </svg>
+
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">
+                    5 ستاره
                   </p>
-                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
                 </div>
 
                 <div class="flex justify-between items-center">
                   <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
                   <div class="flex gap-1 items-center mr-auto">
                     <p class="text-[#4e4e4e]">4/800/000</p>
-                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]"
+                      >تومان</small
+                    >
                   </div>
                 </div>
               </div>
 
-              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
-
-                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              <div
+                class="primary-btn !rounded-none w-full h-[52px] absolute bottom-0"
+              >
+                <a
+                  href="#"
+                  class="text-tertiary text-xl font-normal w-full h-full flex justify-center items-center"
+                  >مشاهده هتل</a
+                >
               </div>
-                
-
             </div>
             <!-- single hotel card -->
             <div
-              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] bml:w-[calc(33%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
             >
               <div class="hotel-card-image-container relative w-full h-[223px]">
                 <div
@@ -1263,53 +1277,67 @@
                 >
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
-                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+                <img
+                  src="../assets/images/Hotel.png"
+                  alt="hotel-image"
+                  width="310"
+                  height="223"
+                  class="w-full h-full"
+                />
               </div>
               <!-- hotel card content -->
               <div class="p-5 flex flex-col gap-2.5">
                 <div class="flex gap-1 items-center">
                   <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
-                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                  <p
+                    class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]"
+                  >
                     deluxe
                   </p>
                 </div>
-                <div class="flex gap-1 items-start">
-                  <p class="">
-                    <svg
-                      width="20"
-                      height="19"
-                      viewBox="0 0 20 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
-                        fill="#FFBF1C"
-                      />
-                    </svg>
+                <div class="flex gap-1 items-center">
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                      fill="#FFBF1C"
+                    />
+                  </svg>
+
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">
+                    5 ستاره
                   </p>
-                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
                 </div>
 
                 <div class="flex justify-between items-center">
                   <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
                   <div class="flex gap-1 items-center mr-auto">
                     <p class="text-[#4e4e4e]">4/800/000</p>
-                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]"
+                      >تومان</small
+                    >
                   </div>
                 </div>
               </div>
 
-              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
-
-                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              <div
+                class="primary-btn !rounded-none w-full h-[52px] absolute bottom-0"
+              >
+                <a
+                  href="#"
+                  class="text-tertiary text-xl font-normal w-full h-full flex justify-center items-center"
+                  >مشاهده هتل</a
+                >
               </div>
-                
-
             </div>
             <!-- single hotel card -->
             <div
-              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] bml:w-[calc(33%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
             >
               <div class="hotel-card-image-container relative w-full h-[223px]">
                 <div
@@ -1336,53 +1364,67 @@
                 >
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
-                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+                <img
+                  src="../assets/images/Hotel.png"
+                  alt="hotel-image"
+                  width="310"
+                  height="223"
+                  class="w-full h-full"
+                />
               </div>
               <!-- hotel card content -->
               <div class="p-5 flex flex-col gap-2.5">
                 <div class="flex gap-1 items-center">
                   <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
-                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                  <p
+                    class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]"
+                  >
                     deluxe
                   </p>
                 </div>
-                <div class="flex gap-1 items-start">
-                  <p class="">
-                    <svg
-                      width="20"
-                      height="19"
-                      viewBox="0 0 20 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
-                        fill="#FFBF1C"
-                      />
-                    </svg>
+                <div class="flex gap-1 items-center">
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                      fill="#FFBF1C"
+                    />
+                  </svg>
+
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">
+                    5 ستاره
                   </p>
-                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
                 </div>
 
                 <div class="flex justify-between items-center">
                   <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
                   <div class="flex gap-1 items-center mr-auto">
                     <p class="text-[#4e4e4e]">4/800/000</p>
-                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]"
+                      >تومان</small
+                    >
                   </div>
                 </div>
               </div>
 
-              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
-
-                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              <div
+                class="primary-btn !rounded-none w-full h-[52px] absolute bottom-0"
+              >
+                <a
+                  href="#"
+                  class="text-tertiary text-xl font-normal w-full h-full flex justify-center items-center"
+                  >مشاهده هتل</a
+                >
               </div>
-                
-
             </div>
             <!-- single hotel card -->
             <div
-              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
+              class="hotel-card xl:w-[310px] h-[415px] w-full sm:w-[calc(50%-6px)] bml:w-[calc(33%-6px)] custom-border rounded-5 overflow-hidden bg-white relative"
             >
               <div class="hotel-card-image-container relative w-full h-[223px]">
                 <div
@@ -1409,53 +1451,460 @@
                 >
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
-                <img src="../assets/images/Hotel.png" alt="hotel-image" />
+                <img
+                  src="../assets/images/Hotel.png"
+                  alt="hotel-image"
+                  width="310"
+                  height="223"
+                  class="w-full h-full"
+                />
               </div>
               <!-- hotel card content -->
               <div class="p-5 flex flex-col gap-2.5">
                 <div class="flex gap-1 items-center">
                   <p class="text-[#4E4E4E] leading-[22px]">هتل</p>
-                  <p class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]">
+                  <p
+                    class="text-[#4E4E4E] border-b border-[#4e4e4e] mt-px leading-[22px]"
+                  >
                     deluxe
                   </p>
                 </div>
-                <div class="flex gap-1 items-start">
-                  <p class="">
-                    <svg
-                      width="20"
-                      height="19"
-                      viewBox="0 0 20 19"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
-                        fill="#FFBF1C"
-                      />
-                    </svg>
+                <div class="flex gap-1 items-center">
+                  <svg
+                    width="20"
+                    height="19"
+                    viewBox="0 0 20 19"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.6857 10.9409C14.4807 11.1396 14.3864 11.427 14.4332 11.7088L15.1369 15.6038C15.1963 15.9339 15.057 16.268 14.7807 16.4588C14.5099 16.6567 14.1497 16.6805 13.8544 16.5221L10.3482 14.6934C10.2262 14.6285 10.0909 14.5936 9.95232 14.5897H9.73778C9.66336 14.6007 9.59053 14.6245 9.52403 14.6609L6.01695 16.4984C5.84357 16.5855 5.64724 16.6163 5.45486 16.5855C4.9862 16.4968 4.67349 16.0503 4.75028 15.5793L5.45486 11.6842C5.50157 11.4 5.40736 11.1111 5.20232 10.9092L2.34361 8.13837C2.10453 7.90642 2.0214 7.55808 2.13065 7.24379C2.23674 6.93029 2.50749 6.7015 2.83445 6.65004L6.76903 6.07925C7.06828 6.04837 7.33111 5.86629 7.4657 5.59712L9.19945 2.04254C9.24061 1.96337 9.29365 1.89054 9.35778 1.82879L9.42903 1.77337C9.46624 1.73221 9.50899 1.69817 9.55649 1.67046L9.64278 1.63879L9.77736 1.58337H10.1107C10.4083 1.61425 10.6704 1.79237 10.8073 2.05837L12.564 5.59712C12.6907 5.856 12.9369 6.03571 13.2211 6.07925L17.1557 6.65004C17.4882 6.69754 17.7661 6.92712 17.8761 7.24379C17.9798 7.56125 17.8904 7.90958 17.6465 8.13837L14.6857 10.9409Z"
+                      fill="#FFBF1C"
+                    />
+                  </svg>
+
+                  <p class="text-[#343434] text-15 font-normal leading-[15px]">
+                    5 ستاره
                   </p>
-                  <p class="text-[#343434] text-15 font-normal leading-[15px]">5 ستاره</p>
                 </div>
 
                 <div class="flex justify-between items-center">
                   <small class="text-[#a9a9a9] text-xs">قیمت برای یک شب</small>
                   <div class="flex gap-1 items-center mr-auto">
                     <p class="text-[#4e4e4e]">4/800/000</p>
-                    <small class="text-[#4e4e4e] font-normal text-[11px]">تومان</س>
+                    <small class="text-[#4e4e4e] font-normal text-[11px]"
+                      >تومان</small
+                    >
                   </div>
                 </div>
               </div>
 
-              <div class="bg-primary transition-colors duration-300 hover:bg-secondary w-full h-[52px] py-3 flex justify-center items-center absolute bottom-0">
-
-                <a href="#" class="text-tertiary text-xl font-normal">مشاهده هتل</a>
+              <div
+                class="primary-btn !rounded-none w-full h-[52px] absolute bottom-0"
+              >
+                <a
+                  href="#"
+                  class="text-tertiary text-xl font-normal w-full h-full flex justify-center items-center"
+                  >مشاهده هتل</a
+                >
               </div>
-                
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <!-- common questoins -->
+      <section class="flex justify-center mt-[110px]">
+        <div class="custom-container flex flex-col gap-11 w-full">
+          <h3 class="font-medium">سوالات متداول</h3>
+          <div class="custom-border rounded-5 flex flex-col md:flex-row bg-white">
+            <!-- right side -->
+            <div class="w-full md:w-2/3 border border-secondary">
+              <!-- question tab links -->
+              <div
+                class="question-tab-links flex gap-4 sm:gap-8 pt-8 border-b border-secondary"
+              >
+                <button
+                  class="question-tab-link px-1 pb-3 xs:px-[14px] xs:pb-5 font-normal text-sm sm:text-base text-[#727272] transition-all duration-300 hover:opacity-50"
+                  onclick="openQuestionTab(event, 'question-tab1')"
+                >
+                  سوالات پر تکرار
+                </button>
+                <button
+                  class="question-tab-link px-1 pb-3 xs:px-[14px] xs:pb-5 font-normal text-sm sm:text-base text-[#727272] transition-all duration-300 hover:opacity-50"
+                  onclick="openQuestionTab(event, 'question-tab2')"
+                >
+                  پرواز
+                </button>
+                <button
+                  class="question-tab-link px-1 pb-3 xs:px-[14px] xs:pb-5 font-normal text-sm sm:text-base text-[#727272] transition-all duration-300 hover:opacity-50"
+                  onclick="openQuestionTab(event, 'question-tab3')"
+                >
+                  هتل
+                </button>
+                <button
+                  class="question-tab-link px-1 pb-3 xs:px-[14px] xs:pb-5 font-normal text-sm sm:text-base text-[#727272] transition-all duration-300 hover:opacity-50"
+                  onclick="openQuestionTab(event, 'question-tab4')"
+                >
+                  تور
+                </button>
+                <button
+                  class="question-tab-link px-1 pb-3 xs:px-[14px] xs:pb-5 font-normal text-sm sm:text-base text-[#727272] transition-all duration-300 hover:opacity-50"
+                  onclick="openQuestionTab(event, 'question-tab5')"
+                >
+                  ویزا
+                </button>
+              </div>
+              <!-- question tab contents -->
+              <div class="p-3 sm:py-8 sm:px-4">
+                <div id="question-tab1" class="question-tab-content">
+                  <div id="accordion" class="flex flex-col gap-4">
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          آیا برای گرفتن ویزا نیاز به مراجعه حضوری است؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          زمان لازم برای اخذ ویزا چقدر است؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          برای گرفتن ویزا، آیا بیمه مسافرتی جزو مدارک لازم است؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          نامه تمکن مالی چیست؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="question-tab2" class="question-tab-content hidden">
+                  <div id="accordion" class="flex flex-col gap-4">
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          آیا برای گرفتن ویزا نیاز به مراجعه حضوری است؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          زمان لازم برای اخذ ویزا چقدر است؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          برای گرفتن ویزا، آیا بیمه مسافرتی جزو مدارک لازم است؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                    <div
+                      class="accordion-item p-3 sm:p-5 rounded-10 custom-border transition-all duration-300 hover:bg-gray-100"
+                    >
+                      <div
+                        class="accordion-header cursor-pointer flex justify-between items-center"
+                      >
+                        <p class="font-medium sm:font-semibold text-accordionTitle pr-2">
+                          نامه تمکن مالی چیست؟
+                        </p>
+                        <div class="svg-wrapper transition-transform">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              clip-rule="evenodd"
+                              d="M15.4881 19.5694C15.1736 19.839 14.7001 19.8026 14.4305 19.4881L8.43054 12.4881C8.1898 12.2072 8.1898 11.7928 8.43054 11.5119L14.4305 4.51189C14.7001 4.1974 15.1736 4.16098 15.4881 4.43054C15.8026 4.70011 15.839 5.17359 15.5694 5.48808L9.9878 12L15.5694 18.5119C15.839 18.8264 15.8026 19.2999 15.4881 19.5694Z"
+                              fill="#171535"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <div
+                        class="accordion-content font-normal text-13 leading-[20px] line-clamp-[10] text-accordionText mt-2.5 w-[90%] max-w-[700px] hidden"
+                      >
+                        خیر. اگر بخواهید این مسیر را با علی‌بابا پیش ببرید نیازی
+                        نیست که به‌صورت حضوری مراجعه کنید. فرایند درخواست ویزا
+                        از علی‌بابا به‌صورت تلفنی یا آنلاین انجام می‌شود.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div id="question-tab3" class="question-tab-content hidden">
+                  <h2 class="text-xl font-bold">Tab 3 Content</h2>
+                  <p class="mt-2">Content for Tab 3 goes here.</p>
+                </div>
+                <div id="question-tab4" class="question-tab-content hidden">
+                  <h2 class="text-xl font-bold">Tab 4 Content</h2>
+                  <p class="mt-2">Content for Tab 4 goes here.</p>
+                </div>
+                <div id="question-tab5" class="question-tab-content hidden">
+                  <h2 class="text-xl font-bold">Tab 5 Content</h2>
+                  <p class="mt-2">Content for Tab 5 goes here.</p>
+                </div>
+              </div>
             </div>
 
+            <!-- left side -->
+            <div class="w-full md:w-1/3 border border-secondary p-4 lg:py-11 lg:px-7">
+              <div class="flex flex-col">
+                <div class="flex flex-col gap-2 lg:gap-5">
+                  <h3 class="text-[#343434] text-xl md:text-2xl lg:text-32">ارتباط با ما</h3>
+                  <h5 class="text-[#525252] font-normal text-base lg:text-xl">
+                    در صورت نیاز به مشاوره اطلاعات زیر را پر کنید
+                  </h5>
+                </div>
+                <form class="mt-[22px] flex flex-col gap-3">
+                  <input
+                    type="text"
+                    class="w-full custom-input py-6 px-4 placeholder:text-inputText text-sm lg:text-base"
+                    placeholder="نام نام خانوادگی"
+                  />
+                  <input
+                    type="tel"
+                    name="phone-number"
+                    id="phone-number"
+                    class="w-full custom-input py-6 px-4 placeholder:text-inputText text-sm lg:text-base text-right"
+                    placeholder="شماره تماس خود را وراد کنید"
+                  />
+                  <div class="flex gap-4 flex-wrap">
+                    <div class="w-full xs:w-[calc(50%-8px)] md:w-full lg:w-[calc(50%-8px)]">
+                      <input
+                        type="text"
+                        class="w-full custom-input py-6 px-4 placeholder:text-inputText text-sm lg:text-base"
+                        placeholder="کد امنیتی"
+                      />
+                    </div>
+                    <div class="w-full xs:w-[calc(50%-8px)] md:w-full lg:w-[calc(50%-8px)]">
+                      <div
+                        class="w-full rounded-5 bg-inputBg text-center py-6 px-4 text-xl font-normal text-[#8a8a8a] tracking-[5px]"
+                      >
+                        14A24C
+                      </div>
+                    </div>
+                  </div>
 
-
+                  <div
+                    class="w-full h-[60px] sm:h-[73px] primary-btn mt-5"
+                  >
+                    <a
+                      href="#"
+                      class="text-tertiary text-lg sm:text-2xl font-normal w-full h-full flex justify-center items-center"
+                      >ارسال</a
+                    >
+                  </div>
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </section>
