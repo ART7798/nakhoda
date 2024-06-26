@@ -148,3 +148,41 @@ try {
   } catch (error) {
     console.error("Error initializing accordion:", error);
   }
+  
+  
+  try{
+    document.addEventListener("DOMContentLoaded", function () {
+      const navbarToggle = document.querySelector(".navbar-toggle");
+      const navbarOverlay = document.querySelector(".navbar-overlay");
+      const navbarClose = document.querySelector(".navbar-close");
+      const navbar = document.querySelector("nav");
+
+      const openNavbar = () => {
+        // navbar.classList.remove("hidden");
+        navbar.classList.add("flex");
+        navbarOverlay.classList.remove("hidden");
+
+        navbar.classList.remove("hidden", "slide-out");
+        navbar.classList.add("slide-in");
+      };
+
+      const closeNavbar = () => {
+        navbar.classList.remove("slide-in");
+        navbar.classList.add("slide-out");
+        // navbar.classList.add("hidden");
+        navbarOverlay.classList.add("hidden");
+        
+        setTimeout(() => {
+          navbar.classList.remove("flex");
+          navContainer.classList.add("hidden");
+        }, 300);
+      };
+
+      navbarToggle.addEventListener("click", openNavbar);
+      navbarOverlay.addEventListener("click", closeNavbar);
+      navbarClose.addEventListener("click", closeNavbar);
+    });
+
+  }catch(error){
+    console.error(error);
+  }
