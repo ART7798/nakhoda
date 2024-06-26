@@ -7,7 +7,139 @@
   </head>
   <body>
     <!-- header -->
-    <header class="h-[113px] bg-white">
+    <header class="h-[113px] bg-white relative">
+      <div
+        class="navbar-overlay bg-black opacity-80 fixed top-0 bottom-0 left-0 right-0 w-screen h-screen z-10"
+      ></div>
+      <nav
+        class="max-w-screen-xl bg-white shadow absolute-horizontally-center top-0 w-full !px-4 py-6 !z-20 flex flex-col items-center gap-8 rounded-b-10"
+      >
+        <div
+          class="pb-3 flex justify-between items-center border-b border-gray-300 w-full xs:w-[80%]"
+        >
+          <div class="logo w-16 h-20 sm:w-20 sm:h-[90px]">
+            <a href="/">
+              <img
+                src="../assets/images/logo-1.png"
+                alt="nakhoda-logo"
+                width="80"
+                height="90"
+              />
+            </a>
+          </div>
+          <div class="navbar-close">
+            <svg
+              width="48px"
+              height="48px"
+              stroke-width="1.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              color="#000000"
+            >
+              <path
+                d="M6.75827 17.2426L12.0009 12M17.2435 6.75736L12.0009 12M12.0009 12L6.75827 6.75736M12.0009 12L17.2435 17.2426"
+                stroke="#000000"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </div>
+        </div>
+
+        <ul class="nav-list flex gap-10 flex-col w-full xs:w-[80%]">
+          <li>
+            <a
+              class="text-2xl text-darkText cursor-pointer hover:text-secondary transition-colors duration-300"
+              href="/"
+            >
+              صفحه اصلی
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-2xl text-darkText cursor-pointer hover:text-secondary transition-colors duration-300"
+              href="/Tours"
+            >
+              تور
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-2xl text-darkText cursor-pointer hover:text-secondary transition-colors duration-300"
+              href="/Visa-and-residence"
+            >
+              ویزا و اقامت
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-2xl text-darkText cursor-pointer hover:text-secondary transition-colors duration-300"
+              href="/Attractions"
+            >
+              جاذبه ها
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-2xl text-darkText cursor-pointer hover:text-secondary transition-colors duration-300"
+              href="/Daily-news"
+            >
+              اخبار روز
+            </a>
+          </li>
+          <li>
+            <a
+              class="text-2xl text-darkText cursor-pointer hover:text-secondary transition-colors duration-300"
+              href="/ارتباط-با-ما"
+            >
+              ارتباط با ما
+            </a>
+          </li>
+        </ul>
+
+        <div
+          class="pt-3 flex justify-between items-center border-t border-gray-300 w-full xs:w-[80%]"
+        >
+          <div class="flex items-start gap-1">
+            <a
+              href="tel:07633383379"
+              class="text-darkText mt-0.5 cursor-pointer transition-all duration-300 hover:text-secondary"
+              >07633383379</a
+            >
+            <svg
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M14.4183 5.99C13.9422 5.90206 13.505 6.20586 13.4144 6.67054C13.3238 7.13522 13.6285 7.58891 14.0916 7.67984C15.4859 7.95166 16.5624 9.03091 16.8353 10.43C16.913 10.8327 17.2675 11.1265 17.6759 11.1265C17.7306 11.1265 17.7854 11.1215 17.8412 11.1115C18.3043 11.0186 18.609 10.5659 18.5184 10.1002C18.1111 8.01062 16.5027 6.39672 14.4183 5.99Z"
+                fill="#76D4EC"
+              />
+              <path
+                d="M14.356 2.50793C14.1329 2.47595 13.9088 2.54191 13.7305 2.68381C13.5473 2.82771 13.4328 3.03557 13.4079 3.26841C13.3551 3.73908 13.6947 4.16479 14.1648 4.21776C17.4064 4.57951 19.926 7.10477 20.2905 10.3565C20.3393 10.7922 20.7048 11.121 21.141 11.121C21.1739 11.121 21.2058 11.119 21.2386 11.115C21.4667 11.09 21.6699 10.9771 21.8133 10.7972C21.9557 10.6174 22.0204 10.3935 21.9945 10.1647C21.5404 6.10746 18.4003 2.95862 14.356 2.50793Z"
+                fill="#76D4EC"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M11.0317 13.4724C15.0208 17.4604 15.9258 12.8467 18.4656 15.3848C20.9143 17.8328 22.3216 18.3232 19.2192 21.4247C18.8306 21.737 16.3616 25.4943 7.6846 16.8197C-0.993478 8.144 2.76158 5.67244 3.07397 5.28395C6.18387 2.17385 6.66586 3.58938 9.11449 6.03733C11.6544 8.5765 7.04266 9.48441 11.0317 13.4724Z"
+                fill="#76D4EC"
+              />
+            </svg>
+          </div>
+          <a
+            href="#"
+            class="sign text-center py-2 px-6 custom-border text-darkText rounded-5 max-h-[38px] flex justify-center items-center transition-all duration-300 hover:bg-secondary"
+          >
+            ورود/ثبت نام
+          </a>
+        </div>
+      </nav>
+
       <div
         class="header-content custom-container flex justify-between items-center w-full h-full"
       >
@@ -1968,7 +2100,9 @@
               <div
                 class="accordion-header cursor-pointer flex justify-between items-center"
               >
-                <h4 class="font-normal text-white text-lg sm:text-2xl">درباره‌ی ما</h4>
+                <h4 class="font-normal text-white text-lg sm:text-2xl">
+                  درباره‌ی ما
+                </h4>
                 <div class="svg-wrapper transition-transform">
                   <svg
                     width="24"
@@ -2299,33 +2433,34 @@
         </div> -->
       </div>
 
-      <div class="custom-container w-full min-h-16 flex flex-col items-center gap-6 lg:gap-4 py-2 sm:flex-row sm:justify-between px-4 xl:px-2 mt-auto pt-12 sm:pt-4 bml:pt-0">
-         <!-- basisfly and trust logo -->
- 
-      <div class="flex gap-2 items-center">
-        <small class="text-[#C1C1C1] text-xs font-normal"
-          >طراحی سایت آژانس مسافرتی و رزرواسیون آنلاین توسط بیسیس فلای</small
-        >
-        <a href="https://www.basisfly.com/">
-          <img
-            src="../assets/images/basisfly-logo 1.png"
-            alt="basis logo"
-            width="70"
-            height="20"
-          />
-        </a>
-      </div>
-      <div>
-        <a href="#">
-          <img
-            src="../assets/images/Trust_logo 1.png"
-            alt="trust logo"
-            width="90"
-            height="20"
-          />
-        </a>
-      </div>
-  
+      <div
+        class="custom-container w-full min-h-16 flex flex-col items-center gap-6 lg:gap-4 py-2 sm:flex-row sm:justify-between px-4 xl:px-2 mt-auto pt-12 sm:pt-4 bml:pt-0"
+      >
+        <!-- basisfly and trust logo -->
+
+        <div class="flex gap-2 items-center">
+          <small class="text-[#C1C1C1] text-xs font-normal"
+            >طراحی سایت آژانس مسافرتی و رزرواسیون آنلاین توسط بیسیس فلای</small
+          >
+          <a href="https://www.basisfly.com/">
+            <img
+              src="../assets/images/basisfly-logo 1.png"
+              alt="basis logo"
+              width="70"
+              height="20"
+            />
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img
+              src="../assets/images/Trust_logo 1.png"
+              alt="trust logo"
+              width="90"
+              height="20"
+            />
+          </a>
+        </div>
       </div>
     </footer>
 
