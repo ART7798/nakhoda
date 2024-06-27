@@ -251,7 +251,9 @@
               height="288"
               class="w-full h-full"
             />
-            <div class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5">
+            <div
+              class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5"
+            >
               <h5
                 class="font-semibold leading-7 text-white text-base lg:text-xl"
               >
@@ -278,7 +280,9 @@
               height="288"
               class="w-full h-full"
             />
-            <div class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5">
+            <div
+              class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5"
+            >
               <h5
                 class="font-semibold leading-7 text-white text-base lg:text-xl"
               >
@@ -305,7 +309,9 @@
               height="288"
               class="w-full h-full"
             />
-            <div class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5">
+            <div
+              class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5"
+            >
               <h5
                 class="font-semibold leading-7 text-white text-base lg:text-xl"
               >
@@ -332,7 +338,9 @@
               height="288"
               class="w-full h-full"
             />
-            <div class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5">
+            <div
+              class="w-full px-5 z-10 flex flex-col gap-5 lg:gap-7 absolute bottom-5"
+            >
               <h5
                 class="font-semibold leading-7 text-white text-base lg:text-xl"
               >
@@ -811,15 +819,22 @@
     </main>
 
     <!-- footer -->
-    <footer
-      class="w-full mt-20 relative min-h-[700px] flex flex-col items-center pt-[550px] xs:pt-[500px] sm:pt-[400px] bml:pt-[320px]"
+   <footer
+      class="w-full mt-20 relative min-h-[650px] flex flex-col items-center pt-[480px] xs:pt-[400px] sm:pt-[320px] bml:pt-[250px]"
     >
       <img
-        src="../assets/images/footer2.png"
+        src="../assets/images/footer-lg.png"
         alt="footer-bg"
-        class="absolute -z-[1] left-0 right-0 -bottom-1 w-full h-full"
+        class="absolute -z-[1] left-0 right-0 -bottom-1 w-full h-full hidden sm:block"
         width="1920"
         height="760"
+      />
+      <img
+        src="../assets/images/footer-sm.png"
+        alt="footer-bg"
+        class="absolute -z-[1] left-0 right-0 -bottom-1 w-full h-full sm:hidden"
+        width="760"
+        height="900"
       />
       <div
         class="custom-container w-full flex justify-between items-center sm:items-start flex-col sm:flex-row gap-2 bml:gap-8 lg:gap-10 xl:gap-20 flex-wrap bml:flex-nowrap"
@@ -1052,13 +1067,23 @@
             </div>
           </div>
         </div>
-
+        <div
+          class="absolute-horizontally-center custom-container w-full bottom-[5%] xs:bottom-[10%] sm:bottom-[5%] lg:bottom-0"
+        >
+          <img
+            src="../assets/images/logo-footer.png"
+            alt="logo"
+            width="550"
+            height="486"
+            class="mr-auto w-1/2 lg:w-[550px]"
+          />
+        </div>
         <!-- badges ans social media -->
-        <div class="flex flex-col bml:mt-[102px] gap-5 mt-12">
+        <div class="flex flex-col bml:mt-[102px] gap-5 mt-12 relative">
           <div class="flex gap-4">
             <div class="w-[56px] h-[52px] rounded bg-white p-2">
               <img
-                src="../assets/images/badges/msg.png"
+                src="../assets/images/msg.png"
                 alt="badge"
                 width="48"
                 height="44"
@@ -1066,7 +1091,7 @@
             </div>
             <div class="w-[56px] h-[52px] rounded bg-white p-2">
               <img
-                src="../assets/images/badges/Iata.png"
+                src="../assets/images/Iata.png"
                 alt="badge"
                 width="48"
                 height="44"
@@ -1074,7 +1099,7 @@
             </div>
             <div class="w-[56px] h-[52px] rounded bg-white p-2">
               <img
-                src="../assets/images/badges/passenger-rights.png"
+                src="../assets/images/passenger-rights.png"
                 alt="badge"
                 width="48"
                 height="44"
@@ -1082,7 +1107,7 @@
             </div>
             <div class="w-[56px] h-[52px] rounded bg-white p-2">
               <img
-                src="../assets/images/badges/Group.png"
+                src="../assets/images/Group.png"
                 alt="badge"
                 width="48"
                 height="44"
@@ -1164,24 +1189,12 @@
           </div>
         </div>
 
-        <!-- <div
-          class="flex justify-center items-center w-[550px] h-[480px] mr-auto"
-        >
-          <img
-            src="../assets/images/logo-footer.png"
-            alt="footer-logo"
-            width="550"
-            height="480"
-            class="max-w-[550px] max-h-[480px]"
-          />
-        </div> -->
       </div>
 
       <div
         class="custom-container w-full min-h-16 flex flex-col items-center gap-6 lg:gap-4 py-2 sm:flex-row sm:justify-between px-4 xl:px-2 mt-auto pt-12 sm:pt-4 bml:pt-0"
       >
         <!-- basisfly and trust logo -->
-
         <div class="flex gap-2 items-center">
           <small class="text-[#C1C1C1] text-xs font-normal"
             >طراحی سایت آژانس مسافرتی و رزرواسیون آنلاین توسط بیسیس فلای</small
