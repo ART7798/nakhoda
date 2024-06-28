@@ -1,3 +1,40 @@
+// navbar
+try {
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbarToggle = document.querySelector(".navbar-toggle");
+    const navbarOverlay = document.querySelector(".navbar-overlay");
+    const navbarClose = document.querySelector(".navbar-close");
+    const navbar = document.querySelector("nav");
+
+    const openNavbar = () => {
+      // navbar.classList.remove("hidden");
+      navbar.classList.add("flex");
+      navbarOverlay.classList.remove("hidden");
+
+      navbar.classList.remove("hidden", "slide-out");
+      navbar.classList.add("slide-in");
+    };
+
+    const closeNavbar = () => {
+      navbar.classList.remove("slide-in");
+      navbar.classList.add("slide-out");
+      // navbar.classList.add("hidden");
+      navbarOverlay.classList.add("hidden");
+
+      setTimeout(() => {
+        navbar.classList.remove("flex");
+        navContainer.classList.add("hidden");
+      }, 300);
+    };
+
+    navbarToggle.addEventListener("click", openNavbar);
+    navbarOverlay.addEventListener("click", closeNavbar);
+    navbarClose.addEventListener("click", closeNavbar);
+  });
+} catch (error) {
+  console.error(error);
+}
+
 // search box tabs
 try {
   function openSearchTab(event, tabId) {
@@ -15,11 +52,12 @@ try {
   }
 
   // Set default tab
-  document.querySelector(".search-tab-link").click();
+  if (document.querySelector(".search-tab-link")) {
+    document.querySelector(".search-tab-link").click();
+  }
 } catch (error) {
   console.log(error);
 }
-
 
 // for all dropdowns
 try {
@@ -45,7 +83,6 @@ try {
   console.log(error);
 }
 
-
 // flight tabs
 try {
   function openFlightTab(event, tabId) {
@@ -63,7 +100,9 @@ try {
   }
 
   // Set default tab
-  document.querySelector(".flight-tab-link").click();
+  if (document.querySelector(".flight-tab-link")) {
+    document.querySelector(".flight-tab-link").click();
+  }
 } catch (error) {
   console.log(error);
 }
@@ -85,7 +124,9 @@ try {
   }
 
   // Set default tab
-  document.querySelector(".tour-tab-link").click();
+  if (document.querySelector(".tour-tab-link")) {
+    document.querySelector(".tour-tab-link").click();
+  }
 } catch (error) {
   console.log(error);
 }
@@ -107,82 +148,45 @@ try {
   }
 
   // Set default tab
-  document.querySelector(".question-tab-link").click();
+  if (document.querySelector(".question-tab-link")) {
+    document.querySelector(".question-tab-link").click();
+  }
 } catch (error) {
   console.log(error);
 }
 
-
 // questions accordion
-  try {
-    document.addEventListener("DOMContentLoaded", () => {
-      const accordionHeaders = document.querySelectorAll(".accordion-header");
+try {
+  document.addEventListener("DOMContentLoaded", () => {
+    const accordionHeaders = document.querySelectorAll(".accordion-header");
 
-      accordionHeaders.forEach((header) => {
-        header.addEventListener("click", () => {
-          const currentlyOpenItem = document.querySelector(
-            ".accordion-content:not(.hidden)"
-          );
-          const currentContent = header.nextElementSibling;
-          const svgWrapper = header.querySelector(".svg-wrapper");
+    accordionHeaders.forEach((header) => {
+      header.addEventListener("click", () => {
+        const currentlyOpenItem = document.querySelector(
+          ".accordion-content:not(.hidden)"
+        );
+        const currentContent = header.nextElementSibling;
+        const svgWrapper = header.querySelector(".svg-wrapper");
 
-          if (currentlyOpenItem && currentlyOpenItem !== currentContent) {
-            currentlyOpenItem.classList.add("hidden");
-            const openSvgWrapper =
-              currentlyOpenItem.previousElementSibling.querySelector(
-                ".svg-wrapper"
-              );
-            openSvgWrapper.classList.remove("-rotate-90");
-          }
+        if (currentlyOpenItem && currentlyOpenItem !== currentContent) {
+          currentlyOpenItem.classList.add("hidden");
+          const openSvgWrapper =
+            currentlyOpenItem.previousElementSibling.querySelector(
+              ".svg-wrapper"
+            );
+          openSvgWrapper.classList.remove("-rotate-90");
+        }
 
-          if (currentContent.classList.contains("hidden")) {
-            currentContent.classList.remove("hidden");
-            svgWrapper.classList.add("-rotate-90");
-          } else {
-            currentContent.classList.add("hidden");
-            svgWrapper.classList.remove("-rotate-90");
-          }
-        });
+        if (currentContent.classList.contains("hidden")) {
+          currentContent.classList.remove("hidden");
+          svgWrapper.classList.add("-rotate-90");
+        } else {
+          currentContent.classList.add("hidden");
+          svgWrapper.classList.remove("-rotate-90");
+        }
       });
     });
-  } catch (error) {
-    console.error("Error initializing accordion:", error);
-  }
-  
-  
-  try{
-    document.addEventListener("DOMContentLoaded", function () {
-      const navbarToggle = document.querySelector(".navbar-toggle");
-      const navbarOverlay = document.querySelector(".navbar-overlay");
-      const navbarClose = document.querySelector(".navbar-close");
-      const navbar = document.querySelector("nav");
-
-      const openNavbar = () => {
-        // navbar.classList.remove("hidden");
-        navbar.classList.add("flex");
-        navbarOverlay.classList.remove("hidden");
-
-        navbar.classList.remove("hidden", "slide-out");
-        navbar.classList.add("slide-in");
-      };
-
-      const closeNavbar = () => {
-        navbar.classList.remove("slide-in");
-        navbar.classList.add("slide-out");
-        // navbar.classList.add("hidden");
-        navbarOverlay.classList.add("hidden");
-        
-        setTimeout(() => {
-          navbar.classList.remove("flex");
-          navContainer.classList.add("hidden");
-        }, 300);
-      };
-
-      navbarToggle.addEventListener("click", openNavbar);
-      navbarOverlay.addEventListener("click", closeNavbar);
-      navbarClose.addEventListener("click", closeNavbar);
-    });
-
-  }catch(error){
-    console.error(error);
-  }
+  });
+} catch (error) {
+  console.error("Error initializing accordion:", error);
+}
