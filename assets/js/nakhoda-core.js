@@ -65,7 +65,10 @@ try {
     const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
 
     dropdownToggles.forEach((toggle) => {
-      toggle.addEventListener("click", function () {
+      toggle.addEventListener("click", function (event) {
+        // Prevent the event from bubbling up to the document
+        event.stopPropagation();
+
         const dropdownContent = this.nextElementSibling;
         const arrow = this.querySelector(".dropdown-arrow");
 
@@ -76,6 +79,39 @@ try {
 
         // Rotate the arrow
         arrow.classList.toggle("open");
+
+        // Close all other dropdowns
+        closeAllDropdowns(this);
+      });
+    });
+
+    // Function to close all dropdowns except the current one
+    function closeAllDropdowns(currentToggle) {
+      dropdownToggles.forEach((toggle) => {
+        if (toggle !== currentToggle) {
+          const dropdownContent = toggle.nextElementSibling;
+          const arrow = toggle.querySelector(".dropdown-arrow");
+
+          if (!dropdownContent.classList.contains("hidden")) {
+            dropdownContent.classList.add("hidden");
+            dropdownContent.classList.remove("flex");
+            // dropdownContent.classList.remove("flex-col");
+            arrow.classList.remove("open");
+          }
+        }
+      });
+    }
+
+    // Close dropdown when clicking outside of it
+    document.addEventListener("click", function () {
+      closeAllDropdowns();
+    });
+
+    // Close dropdown when clicking on a dropdown item
+    const dropdownItems = document.querySelectorAll(".dropdown-item");
+    dropdownItems.forEach((item) => {
+      item.addEventListener("click", function () {
+        closeAllDropdowns();
       });
     });
   });
