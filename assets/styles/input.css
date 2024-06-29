@@ -318,6 +318,11 @@ input {
   background-color: #f3f3f3;
 }
 
+/* options */
+.first-option {
+  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
 /* flights */
 .flight-tab-active {
   color: var(--tertiary);

@@ -7,7 +7,7 @@
   </head>
   <body>
     <!-- header -->
-    <header class="h-[113px] bg-white relative">
+     <header class="h-[113px] bg-white relative">
       <div
         class="navbar-overlay bg-black opacity-80 fixed top-0 bottom-0 left-0 right-0 w-screen h-screen z-10 hidden"
       ></div>
@@ -182,7 +182,7 @@
           <div class="hidden sm:flex items-start gap-1">
             <a
               href="tel:07633383379"
-              class="text-darkText mt-0.5 cursor-pointer transition-all duration-300 hover:text-secondary"
+              class="text-darkText mt-0.5 cursor-pointer transition-all duration-300 hover:text-secondary font-medium text-base sm:text-lg md:text-xl"
               >07633383379</a
             >
             <svg
@@ -271,10 +271,10 @@
               </h5>
               <form action="#" class="flex gap-2.5 flex-col xs:flex-row">
                 <input
-                  type="tel"
+                  type="text"
                   name="phone-number"
                   id="phone-number"
-                  class="custom-input w-full !bg-white !outline-none py-6 px-4 placeholder:text-[#adadad] text-sm lg:text-base text-right rounded-5 min-h-[72px]"
+                  class="custom-input w-full !bg-white !outline-none py-6 px-4 placeholder:text-[#adadad] text-sm lg:text-base rounded-5 min-h-[72px]"
                   placeholder="شماره تماس خود را وراد کنید"
                 />
                 <button
@@ -414,7 +414,7 @@
                 >
               </div>
             </div>
-            <div class="rounded-5 overflow-hidden">
+            <div class="rounded-5 overflow-hidden cursor-pointer">
               <img
                 src="../assets/images/map.png"
                 alt=""
@@ -723,7 +723,7 @@
               />
             </div>
           </div>
-          <small class="text-white pt-1"> ما رو اینجا دنبتل کنید </small>
+          <small class="text-white pt-1"> ما رو اینجا دنبال کنید </small>
           <div class="flex gap-5 items-center">
             <a
               href="/@Answer"
@@ -816,17 +816,28 @@
       >
         <!-- basisfly and trust logo -->
         <div class="flex gap-2 items-center">
-          <small class="text-[#C1C1C1] text-xs font-normal"
-            >طراحی سایت آژانس مسافرتی و رزرواسیون آنلاین توسط بیسیس فلای</small
-          >
-          <a href="https://www.basisfly.com/">
-            <img
-              src="../assets/images/basisfly-logo 1.png"
-              alt="basis logo"
-              width="70"
-              height="20"
-            />
-          </a>
+          <small class="">
+            <a
+              href="http://www.basisfly.com/طراحی-سایت-مخصوص-آژانس-مسافرتی"
+              target="_blank"
+              class="cursor-pointer text-[#C1C1C1] text-xs font-normal"
+            >
+              طراحی سایت آژانس مسافرتی و
+            </a>
+            <a
+              href="http://www.basisfly.com/"
+              target="_blank"
+              class="cursor-pointer text-[#C1C1C1] text-xs font-normal"
+            >
+              رزرواسیون آنلاین توسط بیسیس فلای
+            </a>
+          </small>
+          <img
+            src="../assets/images/basisfly-logo 1.png"
+            alt="basis logo"
+            width="70"
+            height="20"
+          />
         </div>
         <div>
           <a href="#">
