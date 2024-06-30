@@ -262,119 +262,113 @@
               class="search-tab-links flex flex-wrap gap-1.5 gap-y-2 md:gap-2.5"
             >
               <button
+                id="Flight"
+                data-id="item-Flight"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab1')"
+                onclick="openSearchTab(event, 'flight')"
               >
                 پرواز
               </button>
               <button
+                id="Hotel"
+                data-id="item-Hotel"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab2')"
+                onclick="openSearchTab(event, 'hotel')"
               >
                 هتل
               </button>
               <button
+                id="FlightHotel"
+                data-id="item-FlightHotel"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab3')"
+                onclick="openSearchTab(event, 'flightHotel')"
               >
                 هتل و پرواز
               </button>
               <button
+                id="Tour"
+                data-id="item-Tour"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab4')"
+                onclick="openSearchTab(event, 'tour')"
               >
                 تور
               </button>
               <button
+                id="Insurance"
+                data-id="item-Insurance"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab5')"
+                onclick="openSearchTab(event, 'insurance')"
               >
                 بیمه
               </button>
             </div>
             <!-- search tab contents -->
             <div>
-              <div
-                id="search-tab1"
-                class="search-tab-content flex flex-col gap-5"
-              >
+              <div id="flight" class="search-tab-content flex flex-col gap-5">
                 <!-- dropdowns -->
                 <div class="flex items-center gap-5 md:gap-[50px]">
                   <div class="dropdown relative">
-                    <button
-                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3"
+                    <select
+                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px]"
                     >
-                      <span
-                        class="text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary"
-                        >رفت و برگشت</span
+                      <option
+                        id="oneway"
+                        onclick="setFlightFormAction('/Tem3_Oneway_Search.bc', this);"
+                        class="dropdown-content-item"
+                        value="oneway"
+                        selected
                       >
-                      <svg
-                        class="dropdown-arrow transition-transform duration-300"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        یکطرفه
+                      </option>
+                      <option
+                        id="backtoback"
+                        onclick="setFlightFormAction('/Tem3_Roundtrip_Search.bc', this);"
+                        class="dropdown-content-item"
+                        value="backtoback"
+                        selected
                       >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                          fill="#2B2B2B"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      class="dropdown-content hidden w-auto max-w-48 absolute z-10 left-0 right-0 mt-2 p-2 border border-gray-100 shadow rounded-md bg-white flex-col gap-2"
-                    >
-                      <!-- Dropdown content -->
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                    </div>
+                        دو طرفه
+                      </option>
+                      <option
+                        id="backtoback"
+                        onclick="setFlightFormAction('/Tem3_Roundtrip_Search.bc', this);"
+                        class="dropdown-content-item"
+                        value="backtoback"
+                        selected
+                      >
+                        رفت و برگشت
+                      </option>
+                    </select>
                   </div>
                   <div class="dropdown relative">
-                    <button
-                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3"
+                    <select
+                      name="FlightClass"
+                      id="FlightClass1"
+                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px]"
                     >
-                      <span
-                        class="text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary"
-                        >همه کلاس ها</span
-                      >
-                      <svg
-                        class="dropdown-arrow transition-transform duration-300"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                          fill="#2B2B2B"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      class="dropdown-content hidden w-auto max-w-48 absolute z-10 left-0 right-0 mt-2 p-2 border border-gray-100 shadow rounded-md bg-white flex-col gap-2"
-                    >
-                      <!-- Dropdown content -->
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                    </div>
+                      <option value="Economy" selected>اکونومی</option>
+                      <option value="BusinessClass">بیزینس</option>
+                      <option value="FirstClass">فرست</option>
+                    </select>
                   </div>
                 </div>
 
                 <!-- forms -->
-                <form class="flex gap-2 flex-wrap xl:flex-nowrap">
+                <form
+                  id="flight-form"
+                  method="get"
+                  action="/Tem3_Roundtrip_Search.bc"
+                  data-form="flight"
+                  onsubmit="form_search_isSubmited(this,event)"
+                  data-flightType="1"
+                  class="flex gap-2 flex-wrap xl:flex-nowrap"
+                >
                   <div
                     class="flex gap-2 relative flex-wrap xl:flex-nowrap w-full xl:w-auto"
                   >
                     <div
-                      class="size-[38px] bg-primary rounded-full flex justify-center items-center absolute-perfect-center cursor-pointer transition-all duration-300 hover:opacity-70"
+                      onclick="change_route()"
+                      class="route-changer size-[38px] bg-primary rounded-full flex justify-center items-center absolute-perfect-center cursor-pointer transition-all duration-300 hover:opacity-70"
                     >
                       <svg
                         width="24"
@@ -399,6 +393,108 @@
                     </div>
 
                     <input
+                      type="hidden"
+                      name="persiancurrent"
+                      class="persiancurrent"
+                      value
+                    />
+                    <input
+                      type="hidden"
+                      name="select-age"
+                      class="select-age-value"
+                      value="0"
+                    />
+
+                    <div class="city first-rout-city relative">
+                      <div class="inner-city">
+                        <input
+                          id="departure1"
+                          onclick="empty_value(this)"
+                          required=""
+                          aria-label="مبدا"
+                          autocomplete="off"
+                          value="تهران - Tehran - همه فرودگاه ها"
+                          onchange="city_search(this)"
+                          type="text"
+                          placeholder="مبدا"
+                          class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14 departure1 from"
+                        />
+                        <input
+                          value="1203548"
+                          class="co-id FCDid1"
+                          type="hidden"
+                          name="from"
+                          aria-label="co-id"
+                        />
+                        <div
+                          class="searchList hidden rounded-5 absolute right-0 bottom-0-0"
+                        >
+                          <div class="countryFlight"></div>
+                          <ul
+                            class="ul-list flex flex-col gap-3 p-2 bg-slate-300"
+                          >
+                            <li class="category-title background-color_1">
+                              <span>مسیرهای پرتردد</span>
+                            </li>
+                            <li onclick="SelectPlace(this)" data-id="1203548">
+                              <span>تهران - Tehran - همه فرودگاه ها</span>
+                            </li>
+                            <li onclick="SelectPlace(this)" data-id="1177676">
+                              <span>استانبول - Istanbul - همه فرودگاه ها</span>
+                            </li>
+                            <li onclick="SelectPlace(this)" data-id="1192689">
+                              <span>ایروان - Yerevan - همه فرودگاه ها</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="city second-rout-city relative">
+                      <div class="inner-city">
+                        <input
+                          id="departure1"
+                          onclick="empty_value(this)"
+                          required=""
+                          aria-label="مقصد"
+                          autocomplete="off"
+                          value="استانبول - Istanbul - همه فرودگاه ها"
+                          oninput="city_search(this)"
+                          type="text"
+                          placeholder="مقصد"
+                          class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14 departure1 to"
+                        />
+                        <input
+                          value="1177676"
+                          class="co-id FCDid1"
+                          type="hidden"
+                          name="to"
+                          aria-label="co-id"
+                        />
+                        <div
+                          class="searchList hidden rounded-5 absolute right-0 bottom-0-0"
+                        >
+                          <div class="countryFlight"></div>
+                          <ul
+                            class="ul-list flex flex-col gap-3 p-2 bg-slate-300"
+                          >
+                            <li class="category-title background-color_1">
+                              <span>مسیرهای پرتردد</span>
+                            </li>
+                            <li onclick="SelectPlace(this)" data-id="1203548">
+                              <span>تهران - Tehran - همه فرودگاه ها</span>
+                            </li>
+                            <li onclick="SelectPlace(this)" data-id="1177676">
+                              <span>استانبول - Istanbul - همه فرودگاه ها</span>
+                            </li>
+                            <li onclick="SelectPlace(this)" data-id="1192689">
+                              <span>ایروان - Yerevan - همه فرودگاه ها</span>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- <input
                       type="text"
                       placeholder="مبدا"
                       class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
@@ -408,7 +504,7 @@
                       type="text"
                       placeholder="مقصد"
                       class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
-                    />
+                    /> -->
                   </div>
 
                   <div class="w-full flex flex-wrap xl:flex-nowrap gap-2">
@@ -452,19 +548,19 @@
                 </form>
               </div>
 
-              <div id="search-tab2" class="search-tab-content hidden">
+              <div id="hotel" class="search-tab-content hidden">
                 <h2 class="text-xl font-bold">Tab 2 Content</h2>
                 <p class="mt-2">Content for Tab 2 goes here.</p>
               </div>
-              <div id="search-tab3" class="search-tab-content hidden">
+              <div id="flightHotel" class="search-tab-content hidden">
                 <h2 class="text-xl font-bold">Tab 3 Content</h2>
                 <p class="mt-2">Content for Tab 3 goes here.</p>
               </div>
-              <div id="search-tab4" class="search-tab-content hidden">
+              <div id="tour" class="search-tab-content hidden">
                 <h2 class="text-xl font-bold">Tab 4 Content</h2>
                 <p class="mt-2">Content for Tab 4 goes here.</p>
               </div>
-              <div id="search-tab5" class="search-tab-content hidden">
+              <div id="insurance" class="search-tab-content hidden">
                 <h2 class="text-xl font-bold">Tab 5 Content</h2>
                 <p class="mt-2">Content for Tab 5 goes here.</p>
               </div>
