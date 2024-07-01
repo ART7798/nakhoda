@@ -556,3 +556,7 @@ input {
   -ms-overflow-style: -ms-autohiding-scrollbar; /* Hides scrollbar when not in use */
 }
 
+.section-select-age {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

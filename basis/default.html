@@ -1,3 +1,16 @@
+
+
+<basis core="dbsource" source="basiscore" name="flight" mid="20" lid="1">
+  <member
+    type="list"
+    name="Busier-flights"
+    catId="208772"
+    perpage="8"
+    size="310x190"
+  />
+</basis>
+
+
 <!DOCTYPE html>
 <html lang="fa-IR" dir="rtl">
   <head>
@@ -32,26 +45,22 @@
     />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
     <link rel="manifest" href="homescreen-manifest.inc" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.basiscore.net/basisfly.com/css/swiper-bundle.min.css"
-    />
-    <link rel="stylesheet" href="../assets/styles/nakhoda-main.css" />
+    <link rel="stylesheet" href="[##cms.cms.cdn##]/css/nakhoda-main.css" />
   </head>
 
   <body>
     <!-- header -->
-    <basis core="call" file="header.inc" />
+    <basis core="call" file="header-demo.inc" />
 
     <!-- h1 tag for seo -->
     <h1 class="hidden">ناخدا</h1>
 
     <!-- main -->
-    <main>
+   <main>
       <!-- hero -->
       <section
         class="bg-cover bg-center"
-        style="background-image: url('../assets/images/hero.png')"
+        style="background-image: url('[##cms.cms.cdn##]/images/hero.png')"
       >
         <div class="custom-container pt-12 sm:pt-16 md:pt-[92px] pb-[30px]">
           <!-- hero-text-content -->
@@ -77,121 +86,126 @@
               class="search-tab-links flex flex-wrap gap-1.5 gap-y-2 md:gap-2.5"
             >
               <button
+                id="Flight"
+                data-id="item-Flight"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab1')"
+                onclick="openSearchTab(event, 'item-Flight')"
               >
                 پرواز
               </button>
               <button
+                id="Hotel"
+                data-id="item-Hotel"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab2')"
+                onclick="openSearchTab(event, 'item-Hotel')"
               >
                 هتل
               </button>
               <button
+                id="FlightHotel"
+                data-id="item-FlightHotel"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab3')"
+                onclick="openSearchTab(event, 'item-FlightHotel')"
               >
                 هتل و پرواز
               </button>
               <button
+                id="Tour"
+                data-id="item-Tour"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab4')"
+                onclick="openSearchTab(event, 'item-Tour')"
               >
                 تور
               </button>
               <button
+                id="Insurance"
+                data-id="item-Insurance"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'search-tab5')"
+                onclick="openSearchTab(event, 'item-Insurance')"
               >
                 بیمه
               </button>
             </div>
             <!-- search tab contents -->
             <div>
-              <div
-                id="search-tab1"
-                class="search-tab-content flex flex-col gap-5"
-              >
+              <div id="item-Flight" class="search-tab-content flex flex-col gap-5">
                 <!-- dropdowns -->
                 <div class="flex items-center gap-5 md:gap-[50px]">
-                  <div class="dropdown relative">
-                    <button
-                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3"
+                  <div class="relative">
+                    <select
+                      class="flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px] cursor-pointer"
                     >
-                      <span
-                        class="text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary"
-                        >رفت و برگشت</span
+                      <option
+                        id="oneway"
+                        onclick="setFlightFormAction('/Tem3_Oneway_Search.bc', this);"
+                        class="text-base my-2 p-2"
+                        value="oneway"
+                        selected
                       >
-                      <svg
-                        class="dropdown-arrow transition-transform duration-300"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
+                        یکطرفه
+                      </option>
+                      <option
+                        id="backtoback"
+                        onclick="setFlightFormAction('/Tem3_Roundtrip_Search.bc', this);"
+                        class="text-base my-2 p-2"
+                        value="backtoback"
+                        selected
                       >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                          fill="#2B2B2B"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      class="dropdown-content hidden w-auto max-w-48 absolute z-10 left-0 right-0 mt-2 p-2 border border-gray-100 shadow rounded-md bg-white flex-col gap-2"
-                    >
-                      <!-- Dropdown content -->
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                    </div>
+                        دو طرفه
+                      </option>
+                      <option
+                        id="backtoback"
+                        onclick="setFlightFormAction('/Tem3_Roundtrip_Search.bc', this);"
+                        class="text-base my-2 p-2"
+                        value="backtoback"
+                        selected
+                      >
+                        رفت و برگشت
+                      </option>
+                    </select>
                   </div>
-                  <div class="dropdown relative">
-                    <button
-                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3"
+                  <div class="relative">
+                    <select
+                      name="FlightClass"
+                      id="FlightClass1"
+                      class="flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px] cursor-pointer"
                     >
-                      <span
-                        class="text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary"
-                        >همه کلاس ها</span
+                      <option
+                        value="Economy"
+                        selected
+                        class="text-base my-2 p-2"
                       >
-                      <svg
-                        class="dropdown-arrow transition-transform duration-300"
-                        width="24"
-                        height="24"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          fill-rule="evenodd"
-                          clip-rule="evenodd"
-                          d="M12 16.5725C11.7074 16.5725 11.4149 16.4605 11.192 16.2377L4.33513 9.38076C3.88829 8.93392 3.88829 8.21166 4.33513 7.76482C4.78197 7.31798 5.50423 7.31798 5.95107 7.76482L12 13.8137L18.0489 7.76482C18.4958 7.31798 19.218 7.31798 19.6649 7.76482C20.1117 8.21166 20.1117 8.93392 19.6649 9.38076L12.808 16.2377C12.5851 16.4605 12.2926 16.5725 12 16.5725Z"
-                          fill="#2B2B2B"
-                        />
-                      </svg>
-                    </button>
-                    <div
-                      class="dropdown-content hidden w-auto max-w-48 absolute z-10 left-0 right-0 mt-2 p-2 border border-gray-100 shadow rounded-md bg-white flex-col gap-2"
-                    >
-                      <!-- Dropdown content -->
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                      <p class="dropdonw-content-item">مورد اول</p>
-                    </div>
+                        اکونومی
+                      </option>
+                      <option value="BusinessClass" class="text-base my-2 p-2">
+                        بیزینس
+                      </option>
+                      <option value="FirstClass" class="text-base my-2 p-2">
+                        فرست
+                      </option>
+                    </select>
                   </div>
                 </div>
 
                 <!-- forms -->
-                <form class="flex gap-2 flex-wrap xl:flex-nowrap">
+                <form
+                  id="flight-form"
+                  method="get"
+                  action="/Tem3_Roundtrip_Search.bc"
+                  data-form="flight"
+                  onsubmit="form_search_isSubmited(this,event)"
+                  data-flightType="1"
+                  class="flex gap-2 flex-wrap xl:flex-nowrap"
+                >
                   <div
                     class="flex gap-2 relative flex-wrap xl:flex-nowrap w-full xl:w-auto"
                   >
                     <div
-                      class="size-[38px] bg-primary rounded-full flex justify-center items-center absolute-perfect-center cursor-pointer transition-all duration-300 hover:opacity-70"
+                      onclick="change_route(this)"
+                      class="route-changer size-[38px] bg-primary rounded-full flex justify-center items-center absolute-perfect-center cursor-pointer group"
                     >
                       <svg
+                        class="route-changer-icon transition-all duration-500 group-hover:rotate-180"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -214,6 +228,132 @@
                     </div>
 
                     <input
+                      type="hidden"
+                      name="persiancurrent"
+                      class="persiancurrent"
+                      value
+                    />
+                    <input
+                      type="hidden"
+                      name="select-age"
+                      class="select-age-value"
+                      value="0"
+                    />
+
+                    <div
+                      class="city first-rout-city relative xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
+                    >
+                      <input
+                        id="departure"
+                        onclick="empty_value(this)"
+                        onchange="city_search(this)"
+                        data-type="1"
+                        required
+                        aria-label="مبدا"
+                        autocomplete="off"
+                        value=""
+                        type="text"
+                        placeholder="مبدا"
+                        class="custom-input px-8 py-4 h-full w-full country departure FCD1"
+                      />
+                      <input
+                        value=""
+                        class="co-id FCDid1 from"
+                        type="hidden"
+                        name="from"
+                        aria-label="co-id"
+                      />
+                      <div class="searchList hidden absolute right-0 top-[110%] z-10">
+                        <div class="countryFlight"></div>
+                        <ul
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-x-hidden overflow-y-auto min-w-[200px] w-max max-w-[240px] max-h-[240px] custom-scroll"
+                        >
+                          <li class="p-2 bg-gray-200">
+                            <span>مسیرهای پرتردد</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1203548"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>تهران - Tehran - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1177676"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>استانبول - Istanbul - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1192689"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>ایروان - Yerevan - همه فرودگاه ها</span>
+                          </li>
+                        </ul>
+                        <div class="clr"></div>
+                      </div>
+                    </div>
+                    <div
+                      class="city second-rout-city relative xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
+                    >
+                      <input
+                        id="destination"
+                        onclick="empty_value(this)"
+                        oninput="city_search(this)"
+                        data-type="1"
+                        required
+                        aria-label="مقصد"
+                        autocomplete="off"
+                        value=""
+                        type="text"
+                        placeholder="مقصد"
+                        class="custom-input px-8 py-4 h-full w-full country destination FCD2"
+                      />
+                      <input
+                        value=""
+                        class="co-id FCDid2 to"
+                        type="hidden"
+                        name="to"
+                        aria-label="co-id"
+                      />
+                      <div class="searchList hidden absolute right-0 top-[110%] z-10">
+                        <div class="countryFlight"></div>
+                        <ul
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-x-hidden overflow-y-auto min-w-[200px] w-max max-w-[240px] max-h-64 custom-scroll"
+                        >
+                          <li class="p-2 bg-gray-200">
+                            <span>مسیرهای پرتردد</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1203548"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>تهران - Tehran - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1177676"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>استانبول - Istanbul - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1192689"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>ایروان - Yerevan - همه فرودگاه ها</span>
+                          </li>
+                        </ul>
+                        <div class="clr"></div>
+                      </div>
+                    </div>
+
+                    <!-- <input
                       type="text"
                       placeholder="مبدا"
                       class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
@@ -223,38 +363,156 @@
                       type="text"
                       placeholder="مقصد"
                       class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
-                    />
+                    /> -->
                   </div>
 
                   <div class="w-full flex flex-wrap xl:flex-nowrap gap-2">
                     <div
-                      class="flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] xl:w-auto"
+                      class="Basis_Date_Box flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] xl:w-auto"
                     >
                       <div class="w-full xs:w-[calc(50%-4px)] grow">
                         <input
                           type="text"
+                          id="date1"
                           placeholder="تاریخ رفت"
-                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14"
+                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14 Basis_Date start_date"
+                          value
+                          onclick="Basis_Calendar(this,'6/30/2024')"
+                          data-lang="fa"
+                          data-active="0"
+                          data-cache="0"
+                          readonly
+                          required
+                          name="fdate"
                         />
                       </div>
-                      <div class="w-full xs:w-[calc(50%-4px)] grow">
+                      <div
+                        class="Noactive-date w-full xs:w-[calc(50%-4px)] grow"
+                      >
                         <input
                           type="text"
+                          id="date2"
                           placeholder="تاریخ برگشت"
-                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14"
+                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14 Basis_Date end_date"
+                          value
+                          onclick="Basis_Calendar(this,'6/30/2024')"
+                          data-lang="fa"
+                          data-active="0"
+                          data-cache="0"
+                          readonly
+                          disabled
+                          name="tdate"
                         />
                       </div>
                     </div>
                     <div
                       class="flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] xl:w-auto"
                     >
-                      <div class="w-full xs:w-[calc(50%-4px)] xl:w-auto">
+                      <!-- <div class="w-full xs:w-[calc(50%-4px)] xl:w-auto">
                         <input
                           type="text"
                           placeholder="تعداد نفرات"
                           class="custom-input px-4 py-4 xl:w-[190px] w-full h-14"
                         />
+                      </div> -->
+                        <!-- passenger -->
+                    <div class="w-full xs:w-[calc(50%-4px)] xl:w-auto relative">
+                      <div
+                        class="cursor-pointer passenger_section custom-input px-4 py-4 xl:w-[190px] w-full h-14"
+                        onclick="show_passengers(this)"
+                      >
+                        <span class="count-passengers text-sm"
+                          ><span class="count ml-2"> 1 </span
+                          ><span class="">مسافر</span></span
+                        >
                       </div>
+
+                      <div
+                        class="CountPassenger custom-scroll hidden absolute w-[110%] max-h-64 overflow-auto bg-lightwhite shadow-md py-4 px-2 text-xs z-20 top-[110%] rounded-2xl bg-white max-w-[240px]"
+                      >
+                        <div class="item-CountPassenger-content p-2">
+                          <div class="item-CountPassenger mb-4">
+                            <div
+                              class="first-part-CountPassenger text-secondary mb-3 text-sm"
+                            >
+                              بزرگسال<span>(+12)</span>
+                            </div>
+                            <div
+                              class="second-part-CountPassenger flex justify-between"
+                            >
+                              <div class="passenger-button plus-minus">
+                                <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                              </div>
+                              <div class="passenger-button text-base">
+                                <input
+                                  type="text"
+                                  name="adult"
+                                  class="adult adult-count text-center w-full leading-6"
+                                  readonly
+                                  value="1"
+                                />
+                              </div>
+                              <div class="passenger-button plus-minus">
+                                <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                              </div>
+                            </div>
+                            <div class="clr"></div>
+                          </div>
+                          <div class="item-CountPassenger mb-4">
+                            <div
+                              class="first-part-CountPassenger text-secondary mb-3 text-sm"
+                            >
+                              کودک<span>(-11)</span>
+                            </div>
+                            <div
+                              class="second-part-CountPassenger flex justify-between"
+                            >
+                              <div class="passenger-button plus-minus-ch">
+                                <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                              </div>
+                              <div class="passenger-button text-base">
+                                <input
+                                  type="text"
+                                  class="child-count text-center w-full leading-6"
+                                  readonly
+                                  value="0"
+                                />
+                              </div>
+                              <div class="passenger-button plus-minus-ch">
+                                <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                              </div>
+                            </div>
+                            <input
+                              type="hidden"
+                              value
+                              class="child"
+                              name="child"
+                            />
+                            <div class="clr"></div>
+                            <div class="section-select-age flex flex-col gap-4 pt-2 my-2"></div>
+                            <div class="clr"></div>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          class="confirm w-full text-center bg-secondary text-white rounded-md py-2 hover:bg-primary max-lg:w-full h-10 text-base"
+                        >
+                          تایید
+                        </button>
+                      </div>
+                    </div>
 
                       <button
                         type="submit"
@@ -263,23 +521,376 @@
                         جستجو
                       </button>
                     </div>
+                
                   </div>
                 </form>
               </div>
 
-              <div id="search-tab2" class="search-tab-content hidden">
-                <h2 class="text-xl font-bold">Tab 2 Content</h2>
-                <p class="mt-2">Content for Tab 2 goes here.</p>
+              <div id="item-Hotel" class="search-tab-content hidden flex-col gap-5">
+                 <form
+              id="hotel-form"
+              method="post"
+              action="/Tem3_Hotel_Search.bc"
+              data-form="hotel"
+              onsubmit="form_search_isSubmited(this,event)"
+                               class="flex gap-2 flex-wrap xl:flex-nowrap"
+
+            >
+              <div  class="relative w-full lg:w-[calc(20%-8px)]">
+                <div
+                  class="city relative w-full h-14"
+                >
+                  <input
+                    type="hidden"
+                    name="persiancurrent"
+                    class="persiancurrent"
+                    value
+                  />
+                  <input
+                    type="hidden"
+                    name="select-age"
+                    class="select-age-value"
+                    value="0"
+                  />
+
+                  <input
+                    type="text"
+                    required
+                    onclick="empty_value(this)"
+                    oninput="city_search(this)"
+                    onblur="set_city_search(this)"
+                    data-type="3"
+                    name="coHotel"
+                    placeholder="مقصد"
+                    class="custom-input px-8 py-4 h-14 w-full country departure"
+                    value=""
+                  />
+                  <input
+                    class="co-id from"
+                    value=""
+                    type="hidden"
+                    name="from"
+                    aria-label="co-id"
+                  />
+                  <span
+                    class="mini-loading max-lg:top-3 hidden absolute left-5 top-0"
+                    ><i class="fas fa-spinner"></i
+                  ></span>
+                  <div
+                    class="countryFlight absolute bg-lightwhite shadow-md text-sm w-full z-20 rounded-2xl"
+                  ></div>
+                  <div class="searchList hidden absolute right-0 top-[110%] z-10">
+                    <ul class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-x-hidden overflow-y-auto min-w-[200px] w-max max-w-[240px] max-h-[240px] custom-scroll">
+                      <li class="p-2 bg-gray-200">
+                            <span>مسیرهای پرتردد</span>
+                          </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1203548"
+                      >
+                        <span>تهران </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211110"
+                      >
+                        <span>کیش </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1177676"
+                      >
+                        <span>استانبول</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1192689"
+                      >
+                        <span>ایروان</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211083"
+                      >
+                        <span>مشهد</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1173505"
+                      >
+                        <span>دبی </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1168092"
+                      >
+                        <span>آنتالیا</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1189731"
+                      >
+                        <span>تفلیس </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211086"
+                      >
+                        <span>شیراز </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211084"
+                      >
+                        <span>اصفهان</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1182348"
+                      >
+                        <span>مسکو </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211085"
+                      >
+                        <span>تبریز </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1168993"
+                      >
+                        <span>باکو </span>
+                      </li>
+                    </ul>
+                    <div class="clr"></div>
+                  </div>
+                </div>
               </div>
-              <div id="search-tab3" class="search-tab-content hidden">
+
+              <div
+                class="Basis_Date_Box flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] lg:w-[calc(40%-8px)]"
+              >
+                <div
+                  class="w-full xs:w-[calc(50%-4px)] grow"
+                >
+               
+
+                  <input
+                    type="text"
+                    class="custom-input px-4 py-4 w-full h-14 Basis_Date start_date"
+                    value
+                    placeholder="تاریخ ورود"
+                    onclick="Basis_Calendar(this,'6/30/2024')"
+                    data-lang="fa"
+                    data-active="0"
+                    data-cache="0"
+                    readonly
+                    required
+                    name="fdate"
+                  />
+                </div>
+                <div
+                  class="w-full xs:w-[calc(50%-4px)] grow"
+                >
+
+                  <input
+                    type="text"
+                    class="custom-input px-4 py-4 w-full h-14 Basis_Date end_date nextCalOpening"
+                    value
+                    placeholder="تاریخ خروج"
+                    onclick="Basis_Calendar(this,'6/30/2024')"
+                    data-lang="fa"
+                    data-active="0"
+                    data-cache="0"
+                    readonly
+                    name="tdate"
+                  />
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="w-full xs:w-[calc(50%-4px)] relative md:w-[calc(25%-6px)] lg:w-[calc(20%-8px)]">
+                <div
+                  class="cursor-pointer passenger_section custom-input px-4 py-4 w-full h-14"
+                  onclick="show_passengers(this)"
+                >
+                  
+
+
+                  <span
+                    class="count-passengers text-sm"
+                    ><span class="count ml-2"> 1 </span
+                    ><span class="ml-2">مسافر</span> -
+                    <span class="count-room ml-2"> 1 </span
+                    ><span class="ml-2">اتاق</span></span
+                  >
+                </div>
+                <div
+                  class="CountPassenger custom-scroll hidden absolute w-[110%] max-h-64 overflow-auto bg-lightwhite shadow-md py-4 px-2 text-xs z-20 top-[110%] rounded-2xl bg-white max-w-[240px]"
+                >
+                  <div class="item-CountPassenger-content p-2">
+                    <div class="item-CountPassenger mb-4">
+                      <div
+                        class="first-part-CountPassenger text-secondary mb-3"
+                      >
+                        تعداد اتاق
+                      </div>
+                      <div
+                        class="second-part-CountPassenger flex justify-between"
+                      >
+                        <div class="passenger-button plus-minus-room">
+                          <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                        </div>
+                        <div class="passenger-button text-base">
+                          <input
+                            type="text"
+                            name
+                            class="room text-center w-full leading-6"
+                            readonly
+                            value="1"
+                          />
+                        </div>
+                        <div class="passenger-button plus-minus-room">
+                         <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                        </div>
+                      </div>
+                      <div class="clr"></div>
+                    </div>
+                    <div class="ShowRow">
+                      <div class="contentRoom">
+                        <div class="RoomRow mb-3">اتاق 1</div>
+                        <div class="item-CountPassenger mb-4">
+                          <div
+                            class="first-part-CountPassenger text-secondary mb-3 text-sm"
+                          >
+                            بزرگسال<span>(+12)</span>
+                          </div>
+                          <div
+                            class="second-part-CountPassenger flex justify-between"
+                          >
+                            <div class="passenger-button plus-minus-room">
+                             <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                            </div>
+                            <div class="passenger-button text-base">
+                              <input
+                                type="text"
+                                name="_root.rooms__1.adultcount"
+                                class="adult adult-count text-center w-full leading-6"
+                                readonly
+                                value="1"
+                              />
+                            </div>
+                            <div class="passenger-button plus-minus-room">
+                              <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                            </div>
+                          </div>
+                          <div class="clr"></div>
+                        </div>
+                        <div class="item-CountPassenger mb-4">
+                          <div
+                            class="first-part-CountPassenger text-secondary mb-3 text-sm"
+                          >
+                            کودک<span>(-11)</span>
+                          </div>
+                          <div
+                            class="second-part-CountPassenger flex justify-between"
+                          >
+                            <div class="passenger-button plus-minus-ch">
+                              <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                            </div>
+                            <div class="passenger-button text-base">
+                              <input
+                                type="text"
+                                class="child-count text-center w-full leading-6"
+                                readonly
+                                value="0"
+                              />
+                            </div>
+                            <div class="passenger-button plus-minus-ch">
+                               <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                            </div>
+                          </div>
+                          <input
+                            type="hidden"
+                            value="0"
+                            class="childcountandage"
+                            name="_root.rooms__1.childcountandage"
+                          />
+                          <div class="clr"></div>
+                          <div class="section-select-age"></div>
+                          <div class="clr"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="confirm w-full text-center bg-secondary text-white rounded-md py-2 hover:bg-primary max-lg:w-full h-10 text-base"
+                  >
+                    تایید
+                  </button>
+                </div>
+              </div>
+             
+             
+              <button
+                        type="submit"
+                        class="secondary-btn px-4 py-4 h-14 w-full xs:w-[calc(50%-4px)] xl:w-[116px] md:w-[calc(25%-6px)] lg:w-[calc(20%-8px)]"
+                      >
+                        جستجو
+                      </button>
+            </form>
+              </div>
+
+
+
+
+
+              <div id="item-FlightHotel" class="search-tab-content hidden flex-col gap-5">
                 <h2 class="text-xl font-bold">Tab 3 Content</h2>
                 <p class="mt-2">Content for Tab 3 goes here.</p>
               </div>
-              <div id="search-tab4" class="search-tab-content hidden">
+              <div id="item-Tour" class="search-tab-content hidden flex-col gap-5">
                 <h2 class="text-xl font-bold">Tab 4 Content</h2>
                 <p class="mt-2">Content for Tab 4 goes here.</p>
               </div>
-              <div id="search-tab5" class="search-tab-content hidden">
+              <div id="item-Insurance" class="search-tab-content hidden flex-col gap-5">
                 <h2 class="text-xl font-bold">Tab 5 Content</h2>
                 <p class="mt-2">Content for Tab 5 goes here.</p>
               </div>
@@ -298,7 +909,7 @@
               class="lg:size-[150px] size-[100px] !min-w-[100px] flex justify-center items-center opacity-50"
             >
               <img
-                src="../assets/images/option1.svg"
+                src="[##cms.cms.cdn##]/images/option1.svg"
                 alt="visa"
                 width="150"
                 height="150"
@@ -335,7 +946,7 @@
               class="lg:size-[150px] size-[100px] !min-w-[100px] flex justify-center items-center"
             >
               <img
-                src="../assets/images/option3.svg"
+                src="[##cms.cms.cdn##]/images/option3.svg"
                 alt="support"
                 height="150"
                 width="150"
@@ -372,7 +983,7 @@
             class="w-full sm:w-1/2 flex justify-center items-center max-w-[500px] sm:max-w-[992px] xl:h-[409px]"
           >
             <img
-              src="../assets/images/airplaneNoBg.png"
+              src="[##cms.cms.cdn##]/images/airplaneNoBg.png"
               alt="banner-image"
               width="992"
               height="409"
@@ -415,7 +1026,7 @@
                 class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
-                  src="../assets/images/Flight.png"
+                  src="[##cms.cms.cdn##]/images/Flight.png"
                   alt="flight-card-image"
                   width="315"
                   height="375"
@@ -466,7 +1077,7 @@
                 class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
-                  src="../assets/images/Flight.png"
+                  src="[##cms.cms.cdn##]/images/Flight.png"
                   alt="flight-card-image"
                   width="315"
                   height="375"
@@ -517,7 +1128,7 @@
                 class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
-                  src="../assets/images/Flight.png"
+                  src="[##cms.cms.cdn##]/images/Flight.png"
                   alt="flight-card-image"
                   width="315"
                   height="375"
@@ -568,7 +1179,7 @@
                 class="flight-card xl:w-[315px] h-[375px] w-full sm:w-[calc(50%-3px)] bml:w-[calc(33%-4px)] relative rounded-5 overflow-hidden"
               >
                 <img
-                  src="../assets/images/Flight.png"
+                  src="[##cms.cms.cdn##]/images/Flight.png"
                   alt="flight-card-image"
                   width="315"
                   height="375"
@@ -789,7 +1400,7 @@
                       class="size-[34px] rounded-full border border-[#cbcbcb] flex justify-center items-center"
                     >
                       <img
-                        src="../assets/images/mahan.png"
+                        src="[##cms.cms.cdn##]/images/mahan.png"
                         alt="mahan"
                         width="24"
                         height="24"
@@ -930,7 +1541,7 @@
                     <div
                       class="size-[34px] rounded-full border border-[#cbcbcb] flex justify-center items-center"
                     >
-                      <img src="../assets/images/mahan.png" alt="mahan" />
+                      <img src="[##cms.cms.cdn##]/images/mahan.png" alt="mahan" />
                     </div>
                   </div>
 
@@ -1067,7 +1678,7 @@
                     <div
                       class="size-[34px] rounded-full border border-[#cbcbcb] flex justify-center items-center"
                     >
-                      <img src="../assets/images/mahan.png" alt="mahan" />
+                      <img src="[##cms.cms.cdn##]/images/mahan.png" alt="mahan" />
                     </div>
                   </div>
 
@@ -1148,7 +1759,7 @@
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
                 <img
-                  src="../assets/images/Hotel.png"
+                  src="[##cms.cms.cdn##]/images/Hotel.png"
                   alt="hotel-image"
                   width="310"
                   height="223"
@@ -1235,7 +1846,7 @@
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
                 <img
-                  src="../assets/images/Hotel.png"
+                  src="[##cms.cms.cdn##]/images/Hotel.png"
                   alt="hotel-image"
                   width="310"
                   height="223"
@@ -1322,7 +1933,7 @@
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
                 <img
-                  src="../assets/images/Hotel.png"
+                  src="[##cms.cms.cdn##]/images/Hotel.png"
                   alt="hotel-image"
                   width="310"
                   height="223"
@@ -1409,7 +2020,7 @@
                   <small class="text-15 font-medium text-discount">%50</small>
                 </div>
                 <img
-                  src="../assets/images/Hotel.png"
+                  src="[##cms.cms.cdn##]/images/Hotel.png"
                   alt="hotel-image"
                   width="310"
                   height="223"
@@ -1909,6 +2520,6 @@
     </main>
 
     <!-- footer -->
-    <basis core="call" file="footer.inc" />
+    <basis core="call" file="footer-demo.inc" />
   </body>
 </html>

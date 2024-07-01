@@ -907,10 +907,6 @@ small {
   margin-bottom: 0.625rem;
 }
 
-.-mr-1 {
-  margin-right: -0.25rem;
-}
-
 .mb-12 {
   margin-bottom: 3rem;
 }
@@ -4298,6 +4294,11 @@ input {
   /* Hides scrollbar when not in use */
 }
 
+.section-select-age {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -5241,4 +5242,3 @@ input {
     }
   }
 }
-

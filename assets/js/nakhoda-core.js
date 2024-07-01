@@ -249,6 +249,7 @@ try {
   console.error("Error initializing accordion:", error);
 }
 
+// this function clear value of element under certain circumstances
 function empty_value(element) {
   // Set the value of the element to an empty string
   element.value = "";
@@ -372,6 +373,7 @@ document.querySelectorAll(".your-input-class").forEach(function (input) {
   });
 });
 
+// set place based what user select form the list
 function SelectPlace(element) {
   // Get the data-id attribute of the element
   var idSelected = element.getAttribute("data-id");
@@ -425,13 +427,14 @@ function SelectPlace(element) {
   }
 }
 
+// this is how dropdowns content get disappear
 document.addEventListener("click", function (event) {
   // Check if the click was outside the specified elements for searchList
   if (!event.target.closest(".searchList, .country, .selectCountry")) {
     var searchLists = document.querySelectorAll(".searchList");
     searchLists.forEach(function (searchList) {
-      searchList.style.display = "none";
       // Equivalent to fadeOut
+      searchList.style.display = "none";
     });
   }
 
@@ -449,6 +452,7 @@ document.addEventListener("click", function (event) {
   }
 });
 
+// change form action for different sizes
 document.addEventListener("DOMContentLoaded", function () {
   // Check if the window width is less than or equal to 640 pixels
   if (window.innerWidth <= 640) {
@@ -476,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// route changer
+// route changer between departure and destination
 function change_route(element) {
   // Get the input elements
   var fromInput = element.closest("form").querySelector(".departure");
@@ -501,26 +505,34 @@ function change_route(element) {
   toInput.value = toValue;
 }
 
-// show passengers part
 // Show passengers part
 function show_passengers(element) {
-  element.closest("form").querySelector(".CountPassenger").style.display = "block";
+  element.closest("form").querySelector(".CountPassenger").style.display =
+    "block";
 }
 
+// confirm button in passengers part
 document.querySelectorAll(".confirm").forEach(function (button) {
   button.addEventListener("click", function () {
     button.closest(".CountPassenger").style.display = "none";
   });
 });
 
+// how plus button work in passenger part
 document.querySelectorAll(".plus-minus").forEach(function (button) {
   button.addEventListener("click", function () {
     var input = button.closest(".item-CountPassenger").querySelector("input");
     var oldVal = parseInt(input.value);
-    var newVal = button.textContent.includes("+") ? oldVal + 1 : oldVal > 0 ? oldVal - 1 : 0;
+    var newVal = button.textContent.includes("+")
+      ? oldVal + 1
+      : oldVal > 0
+      ? oldVal - 1
+      : 0;
 
     // Get the current child count
-    var childCount = parseInt(button.closest("form").querySelector(".child-count").value);
+    var childCount = parseInt(
+      button.closest("form").querySelector(".child-count").value
+    );
 
     // Check if removing an adult when there are children
     if (newVal < oldVal && childCount > newVal) {
@@ -534,27 +546,42 @@ document.querySelectorAll(".plus-minus").forEach(function (button) {
     if (totalCount > 10) return;
 
     if (newVal >= 2) {
-      button.closest(".item-CountPassenger").querySelector(".minus-btn").classList.add("minus-btn-active");
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.add("minus-btn-active");
     }
     if (newVal < 2) {
-      button.closest(".item-CountPassenger").querySelector(".minus-btn").classList.remove("minus-btn-active");
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.remove("minus-btn-active");
     }
     if (newVal >= 10 || newVal < 1) return;
 
     input.value = newVal;
     var passengers_count = totalCount;
-    button.closest("form").querySelector(".count-passengers .count").textContent = passengers_count;
+    button
+      .closest("form")
+      .querySelector(".count-passengers .count").textContent = passengers_count;
   });
 });
 
+// how minus button work in passenger part
 document.querySelectorAll(".plus-minus-ch").forEach(function (button) {
   button.addEventListener("click", function () {
     var input = button.closest(".item-CountPassenger").querySelector("input");
     var oldVal = parseInt(input.value);
-    var newVal = button.textContent.includes("+") ? oldVal + 1 : oldVal > 0 ? oldVal - 1 : 0;
+    var newVal = button.textContent.includes("+")
+      ? oldVal + 1
+      : oldVal > 0
+      ? oldVal - 1
+      : 0;
 
     // Get the current adult count
-    var adultCount = parseInt(button.closest("form").querySelector(".adult").value);
+    var adultCount = parseInt(
+      button.closest("form").querySelector(".adult").value
+    );
 
     // Check if adding a child without enough adults
     if (newVal > oldVal && newVal > adultCount) {
@@ -568,21 +595,33 @@ document.querySelectorAll(".plus-minus-ch").forEach(function (button) {
     if (totalCount > 10) return;
 
     if (newVal >= 1) {
-      button.closest(".item-CountPassenger").querySelector(".minus-btn").classList.add("minus-btn-active");
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.add("minus-btn-active");
     }
     if (newVal < 1) {
-      button.closest(".item-CountPassenger").querySelector(".minus-btn").classList.remove("minus-btn-active");
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.remove("minus-btn-active");
     }
     if (newVal >= 5) return;
 
     input.value = newVal;
-    var childInput = button.closest(".item-CountPassenger").querySelector(".child");
+    var childInput = button
+      .closest(".item-CountPassenger")
+      .querySelector(".child");
     childInput.value = newVal == 0 ? newVal : newVal + ",";
 
     var passengers_count = totalCount;
-    button.closest("form").querySelector(".count-passengers .count").textContent = passengers_count;
+    button
+      .closest("form")
+      .querySelector(".count-passengers .count").textContent = passengers_count;
 
-    var sectionSelectAge = button.closest(".item-CountPassenger").querySelector(".section-select-age");
+    var sectionSelectAge = button
+      .closest(".item-CountPassenger")
+      .querySelector(".section-select-age");
     if (oldVal < newVal) {
       sectionSelectAge.appendChild(createChildDropdown(newVal));
     } else if (oldVal > newVal) {
@@ -591,16 +630,18 @@ document.querySelectorAll(".plus-minus-ch").forEach(function (button) {
   });
 });
 
+// when child count is more than 0 it appears
 function createChildDropdown(i) {
   var childDropdown = document.createElement("div");
   childDropdown.className = "createChildDropdown";
+  childDropdown.classList.add("my-2");
 
   var label = document.createElement("label");
   label.setAttribute("for", "childDropdown-" + i);
   label.textContent = "سن کودک " + i;
-  label.classList.add('text-sm');
+  label.classList.add("text-sm");
   childDropdown.appendChild(label);
-  
+
   var select = document.createElement("select");
   select.classList.add("text-sm");
   childDropdown.appendChild(select);
@@ -630,10 +671,258 @@ function createChildDropdown(i) {
   return childDropdown;
 }
 
+// when child count is 0 it appears
 function destroyChildDropdown(element, i) {
   var dropdowns = element.querySelectorAll("div.createChildDropdown");
   if (dropdowns[i]) dropdowns[i].remove();
 }
+
+
+// plus - minus buttons for hotel room
+document.querySelectorAll(".plus-minus-room").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var ad = 0;
+    var input = button.closest(".item-CountPassenger").querySelector("input");
+    var oldVal = parseInt(input.value);
+    var newVal = button.textContent.includes("+")
+      ? oldVal + 1
+      : oldVal > 0
+      ? oldVal - 1
+      : 0;
+
+    if (newVal >= 2) {
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.add("minus-btn-active");
+    }
+    if (newVal < 2) {
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.remove("minus-btn-active");
+    }
+    if (newVal >= 5 || newVal < 1) return;
+
+    input.value = newVal;
+    button
+      .closest("form")
+      .querySelector(".count-passengers .count-room").textContent = newVal;
+    var showRow = button.closest("form").querySelector(".ShowRow");
+    showRow.innerHTML = "";
+    for (var i = 1; i <= newVal; i++) {
+      showRow.innerHTML +=
+        '<div class="contentRoom"><div class="RoomRow mb-3">اتاق ' +
+        i +
+        ' </div><div class="item-CountPassenger mb-4"><div class="first-part-CountPassenger text-secondary mb-3 text-sm">بزرگسال (+12)</div><div class="second-part-CountPassenger flex justify-between"><div class="passenger-button plus-minus"><span class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150">+</span></div><div class="passenger-button text-base"><input type="text" name="_root.rooms__' +
+        i +
+        '.adultcount" class="adult adult-count text-center w-full leading-6"  readonly="" value="1"></div><div class="passenger-button plus-minus"><span class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150">-</span></div></div><div class="clr"></div></div><div class="item-CountPassenger mb-4"><div class="first-part-CountPassenger text-secondary mb-3 text-sm">کودک (-12)</div><div class="second-part-CountPassenger flex justify-between"><div class="passenger-button plus-minus-ch"><span class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150">+</span></div><div class="passenger-button text-base"><input type="text" class="child-count text-center w-full leading-6"  readonly="" value="0"></div><div class="passenger-button plus-minus-ch"><span class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150">-</span></div></div><input type="hidden" value="0" class="childcountandage" name="_root.rooms__' +
+        i +
+        '.childcountandage"><div class="clr"></div><div class="section-select-age"></div><div class="clr"></div></div></div>';
+    }
+
+    button
+      .closest("form")
+      .querySelectorAll(".contentRoom")
+      .forEach(function (contentRoom) {
+        var adult = parseInt(contentRoom.querySelector(".adult").value);
+        ad += adult;
+        contentRoom.querySelectorAll(".plus-minus").forEach(function (button) {
+          button.addEventListener("click", function () {
+            var sumAdult = 0;
+            var sumChild = 0;
+            var input = button
+              .closest(".item-CountPassenger")
+              .querySelector("input");
+            var oldVal = parseInt(input.value);
+            var newVal = button.textContent.includes("+")
+              ? oldVal + 1
+              : oldVal > 0
+              ? oldVal - 1
+              : 0;
+
+            if (newVal >= 2) {
+              button
+                .closest(".item-CountPassenger")
+                .querySelector(".minus-btn")
+                .classList.add("minus-btn-active");
+            }
+            if (newVal < 2) {
+              button
+                .closest(".item-CountPassenger")
+                .querySelector(".minus-btn")
+                .classList.remove("minus-btn-active");
+            }
+            if (newVal >= 10 || newVal < 1) return;
+
+            input.value = newVal;
+            button
+              .closest(".CountPassenger")
+              .querySelectorAll(".contentRoom")
+              .forEach(function (contentRoom) {
+                sumAdult += parseInt(contentRoom.querySelector(".adult").value);
+                sumChild += parseInt(
+                  contentRoom.querySelector(".child-count").value
+                );
+              });
+            button
+              .closest("form")
+              .querySelector(".count-passengers .count").textContent =
+              sumAdult + sumChild;
+          });
+        });
+
+        contentRoom
+          .querySelectorAll(".plus-minus-ch")
+          .forEach(function (button) {
+            button.addEventListener("click", function () {
+              var sumAdult = 0;
+              var sumChild = 0;
+              var input = button
+                .closest(".item-CountPassenger")
+                .querySelector("input");
+              var oldVal = parseInt(input.value);
+              var newVal = button.textContent.includes("+")
+                ? oldVal + 1
+                : oldVal > 0
+                ? oldVal - 1
+                : 0;
+
+              if (newVal >= 1) {
+                button
+                  .closest(".item-CountPassenger")
+                  .querySelector(".minus-btn")
+                  .classList.add("minus-btn-active");
+              }
+              if (newVal < 1) {
+                button
+                  .closest(".item-CountPassenger")
+                  .querySelector(".minus-btn")
+                  .classList.remove("minus-btn-active");
+              }
+              if (newVal >= 5) return;
+
+              input.value = newVal;
+              button
+                .closest(".CountPassenger")
+                .querySelectorAll(".contentRoom")
+                .forEach(function (contentRoom) {
+                  sumAdult += parseInt(
+                    contentRoom.querySelector(".adult").value
+                  );
+                  sumChild += parseInt(
+                    contentRoom.querySelector(".child-count").value
+                  );
+                });
+              button
+                .closest("form")
+                .querySelector(".count-passengers .count").textContent =
+                sumAdult + sumChild;
+
+              var sectionSelectAge = button
+                .closest(".item-CountPassenger")
+                .querySelector(".section-select-age");
+              if (oldVal < newVal) {
+                sectionSelectAge.appendChild(createChildDropdown(newVal));
+              } else if (oldVal > newVal) {
+                destroyChildDropdown(sectionSelectAge, newVal);
+              }
+            });
+          });
+      });
+    button
+      .closest("form")
+      .querySelector(".count-passengers .count").textContent = ad;
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
+// document.querySelectorAll(".plus-minus-ins").forEach(function (button) {
+//   button.addEventListener("click", function () {
+//     var input = button.closest(".item-CountPassenger").querySelector("input");
+//     var oldVal = parseInt(input.value);
+//     var newVal = button.textContent.includes("+")
+//       ? oldVal + 1
+//       : oldVal > 0
+//       ? oldVal - 1
+//       : 0;
+
+//     if (newVal >= 1) {
+//       button
+//         .closest(".item-CountPassenger")
+//         .querySelector(".minus-btn")
+//         .classList.add("minus-btn-active");
+//     }
+//     if (newVal < 1) {
+//       button
+//         .closest(".item-CountPassenger")
+//         .querySelector(".minus-btn")
+//         .classList.remove("minus-btn-active");
+//     }
+//     if (newVal >= 9 || newVal < 1) return;
+
+//     input.value = newVal;
+//     button
+//       .closest(".item-CountPassenger")
+//       .querySelector(".passengercount").value = newVal;
+//     button
+//       .closest("form")
+//       .querySelector(".count-passengers .count").textContent = newVal;
+
+//     var wrapperBirthdatePassenger = button
+//       .closest(".item-CountPassenger")
+//       .querySelector(".Wrapper-BirthdatePassenger");
+//     wrapperBirthdatePassenger.innerHTML = "";
+//     for (var i = 1; i <= newVal; i++) {
+//       wrapperBirthdatePassenger.innerHTML +=
+//         '<div class="BirthdatePassenger"><label class="label">تاریخ تولد مسافر ' +
+//         i +
+//         '</label><input class="datepicker BithdatePassenger" placeholder="تاریخ میلادی" type="text" autocomplete="off" readonly required><div class="clr"></div></div>';
+//     }
+
+//     document.querySelectorAll(".datepicker").forEach(function (datepicker) {
+//       datepicker.addEventListener("focus", function () {
+//         FDatepicker(this, {
+//           single: true,
+//           isJalali: isJalali,
+//           changeMonth: true,
+//           changeYear: true,
+//           minDate: "-100y",
+//           maxDate: document.getElementById("AdaultMaxDate").value,
+//           yearRangeJalali: "1250:1500",
+//           yearRangeGregorian: "1900:2030",
+//           numberOfMonths: 1,
+//         });
+//         var innerContent = document.querySelector(".nice-select > ul");
+//         var optionHeight = document.querySelector(
+//           ".nice-select .option"
+//         ).offsetHeight;
+//         var optionCount = document.querySelectorAll(
+//           ".nice-select .option"
+//         ).length;
+//         var ulHeight = optionHeight * optionCount;
+//         innerContent.scrollTop = ulHeight / 2;
+//       });
+//     });
+//   });
+// });
+
+
+
+
+
+
+
+
 
 
 // document.addEventListener("DOMContentLoaded", function () {
