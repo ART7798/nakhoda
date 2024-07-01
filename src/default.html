@@ -307,14 +307,14 @@
               <div id="flight" class="search-tab-content flex flex-col gap-5">
                 <!-- dropdowns -->
                 <div class="flex items-center gap-5 md:gap-[50px]">
-                  <div class="dropdown relative">
+                  <div class="relative">
                     <select
-                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px]"
+                      class="flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px] cursor-pointer"
                     >
                       <option
                         id="oneway"
                         onclick="setFlightFormAction('/Tem3_Oneway_Search.bc', this);"
-                        class="dropdown-content-item"
+                        class="text-base my-2 p-2"
                         value="oneway"
                         selected
                       >
@@ -323,7 +323,7 @@
                       <option
                         id="backtoback"
                         onclick="setFlightFormAction('/Tem3_Roundtrip_Search.bc', this);"
-                        class="dropdown-content-item"
+                        class="text-base my-2 p-2"
                         value="backtoback"
                         selected
                       >
@@ -332,7 +332,7 @@
                       <option
                         id="backtoback"
                         onclick="setFlightFormAction('/Tem3_Roundtrip_Search.bc', this);"
-                        class="dropdown-content-item"
+                        class="text-base my-2 p-2"
                         value="backtoback"
                         selected
                       >
@@ -340,15 +340,25 @@
                       </option>
                     </select>
                   </div>
-                  <div class="dropdown relative">
+                  <div class="relative">
                     <select
                       name="FlightClass"
                       id="FlightClass1"
-                      class="dropdown-toggle flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px]"
+                      class="flex items-end justify-between gap-2 md:gap-3 text-sm sm:text-15 font-normal text-[#2a2a2a] transition-all duration-300 hover:text-secondary bg-transparent min-w-[100px] cursor-pointer"
                     >
-                      <option value="Economy" selected>اکونومی</option>
-                      <option value="BusinessClass">بیزینس</option>
-                      <option value="FirstClass">فرست</option>
+                      <option
+                        value="Economy"
+                        selected
+                        class="text-base my-2 p-2"
+                      >
+                        اکونومی
+                      </option>
+                      <option value="BusinessClass" class="text-base my-2 p-2">
+                        بیزینس
+                      </option>
+                      <option value="FirstClass" class="text-base my-2 p-2">
+                        فرست
+                      </option>
                     </select>
                   </div>
                 </div>
@@ -367,10 +377,11 @@
                     class="flex gap-2 relative flex-wrap xl:flex-nowrap w-full xl:w-auto"
                   >
                     <div
-                      onclick="change_route()"
-                      class="route-changer size-[38px] bg-primary rounded-full flex justify-center items-center absolute-perfect-center cursor-pointer transition-all duration-300 hover:opacity-70"
+                      onclick="change_route(this)"
+                      class="route-changer size-[38px] bg-primary rounded-full flex justify-center items-center absolute-perfect-center cursor-pointer group"
                     >
                       <svg
+                        class="route-changer-icon transition-all duration-500 group-hover:rotate-180"
                         width="24"
                         height="24"
                         viewBox="0 0 24 24"
@@ -405,92 +416,116 @@
                       value="0"
                     />
 
-                    <div class="city first-rout-city relative">
-                      <div class="inner-city">
-                        <input
-                          id="departure1"
-                          onclick="empty_value(this)"
-                          required=""
-                          aria-label="مبدا"
-                          autocomplete="off"
-                          value="تهران - Tehran - همه فرودگاه ها"
-                          onchange="city_search(this)"
-                          type="text"
-                          placeholder="مبدا"
-                          class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14 departure1 from"
-                        />
-                        <input
-                          value="1203548"
-                          class="co-id FCDid1"
-                          type="hidden"
-                          name="from"
-                          aria-label="co-id"
-                        />
-                        <div
-                          class="searchList hidden rounded-5 absolute right-0 bottom-0-0"
+                    <div
+                      class="city first-rout-city relative xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
+                    >
+                      <input
+                        id="departure"
+                        onclick="empty_value(this)"
+                        onchange="city_search(this)"
+                        data-type="1"
+                        required
+                        aria-label="مبدا"
+                        autocomplete="off"
+                        value="تهران - Tehran - همه فرودگاه ها"
+                        type="text"
+                        placeholder="مبدا"
+                        class="custom-input px-8 py-4 h-full w-full country departure FCD1"
+                      />
+                      <input
+                        value="1203548"
+                        class="co-id FCDid1 from"
+                        type="hidden"
+                        name="from"
+                        aria-label="co-id"
+                      />
+                      <div class="searchList hidden absolute right-0">
+                        <div class="countryFlight"></div>
+                        <ul
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[280px]"
                         >
-                          <div class="countryFlight"></div>
-                          <ul
-                            class="ul-list flex flex-col gap-3 p-2 bg-slate-300"
+                          <li class="p-2 bg-gray-200">
+                            <span>مسیرهای پرتردد</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1203548"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
                           >
-                            <li class="category-title background-color_1">
-                              <span>مسیرهای پرتردد</span>
-                            </li>
-                            <li onclick="SelectPlace(this)" data-id="1203548">
-                              <span>تهران - Tehran - همه فرودگاه ها</span>
-                            </li>
-                            <li onclick="SelectPlace(this)" data-id="1177676">
-                              <span>استانبول - Istanbul - همه فرودگاه ها</span>
-                            </li>
-                            <li onclick="SelectPlace(this)" data-id="1192689">
-                              <span>ایروان - Yerevan - همه فرودگاه ها</span>
-                            </li>
-                          </ul>
-                        </div>
+                            <span>تهران - Tehran - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1177676"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>استانبول - Istanbul - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1192689"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>ایروان - Yerevan - همه فرودگاه ها</span>
+                          </li>
+                        </ul>
+                        <div class="clr"></div>
                       </div>
                     </div>
-                    <div class="city second-rout-city relative">
-                      <div class="inner-city">
-                        <input
-                          id="departure1"
-                          onclick="empty_value(this)"
-                          required=""
-                          aria-label="مقصد"
-                          autocomplete="off"
-                          value="استانبول - Istanbul - همه فرودگاه ها"
-                          oninput="city_search(this)"
-                          type="text"
-                          placeholder="مقصد"
-                          class="custom-input px-8 py-4 xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14 departure1 to"
-                        />
-                        <input
-                          value="1177676"
-                          class="co-id FCDid1"
-                          type="hidden"
-                          name="to"
-                          aria-label="co-id"
-                        />
-                        <div
-                          class="searchList hidden rounded-5 absolute right-0 bottom-0-0"
+                    <div
+                      class="city second-rout-city relative xl:w-[250px] w-full xs:w-[calc(50%-4px)] h-14"
+                    >
+                      <input
+                        id="destination"
+                        onclick="empty_value(this)"
+                        oninput="city_search(this)"
+                        data-type="1"
+                        required
+                        aria-label="مقصد"
+                        autocomplete="off"
+                        value="استانبول - Istanbul - همه فرودگاه ها"
+                        type="text"
+                        placeholder="مقصد"
+                        class="custom-input px-8 py-4 h-full w-full country destination FCD2"
+                      />
+                      <input
+                        value="1177676"
+                        class="co-id FCDid2 to"
+                        type="hidden"
+                        name="to"
+                        aria-label="co-id"
+                      />
+                      <div class="searchList hidden absolute right-0">
+                        <div class="countryFlight"></div>
+                        <ul
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[280px]"
                         >
-                          <div class="countryFlight"></div>
-                          <ul
-                            class="ul-list flex flex-col gap-3 p-2 bg-slate-300"
+                          <li class="p-2 bg-gray-200">
+                            <span>مسیرهای پرتردد</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1203548"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
                           >
-                            <li class="category-title background-color_1">
-                              <span>مسیرهای پرتردد</span>
-                            </li>
-                            <li onclick="SelectPlace(this)" data-id="1203548">
-                              <span>تهران - Tehran - همه فرودگاه ها</span>
-                            </li>
-                            <li onclick="SelectPlace(this)" data-id="1177676">
-                              <span>استانبول - Istanbul - همه فرودگاه ها</span>
-                            </li>
-                            <li onclick="SelectPlace(this)" data-id="1192689">
-                              <span>ایروان - Yerevan - همه فرودگاه ها</span>
-                            </li>
-                          </ul>
-                        </div>
+                            <span>تهران - Tehran - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1177676"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>استانبول - Istanbul - همه فرودگاه ها</span>
+                          </li>
+                          <li
+                            onclick="SelectPlace(this)"
+                            data-id="1192689"
+                            class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                          >
+                            <span>ایروان - Yerevan - همه فرودگاه ها</span>
+                          </li>
+                        </ul>
+                        <div class="clr"></div>
                       </div>
                     </div>
 
@@ -509,20 +544,40 @@
 
                   <div class="w-full flex flex-wrap xl:flex-nowrap gap-2">
                     <div
-                      class="flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] xl:w-auto"
+                      class="Basis_Date_Box flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] xl:w-auto"
                     >
                       <div class="w-full xs:w-[calc(50%-4px)] grow">
                         <input
                           type="text"
+                          id="date1"
                           placeholder="تاریخ رفت"
-                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14"
+                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14 Basis_Date start_date"
+                          value
+                          onclick="Basis_Calendar(this,'6/30/2024')"
+                          data-lang="fa"
+                          data-active="0"
+                          data-cache="0"
+                          readonly
+                          required
+                          name="fdate"
                         />
                       </div>
-                      <div class="w-full xs:w-[calc(50%-4px)] grow">
+                      <div
+                        class="Noactive-date w-full xs:w-[calc(50%-4px)] grow"
+                      >
                         <input
                           type="text"
+                          id="date2"
                           placeholder="تاریخ برگشت"
-                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14"
+                          class="custom-input px-4 py-4 xl:w-[180px] w-full h-14 Basis_Date end_date"
+                          value
+                          onclick="Basis_Calendar(this,'6/30/2024')"
+                          data-lang="fa"
+                          data-active="0"
+                          data-cache="0"
+                          readonly
+                          disabled
+                          name="tdate"
                         />
                       </div>
                     </div>
@@ -544,6 +599,61 @@
                         جستجو
                       </button>
                     </div>
+                    <!-- passenger -->
+                    <!-- Main container -->
+                    <div class="relative p-4">
+                      <!-- Trigger div -->
+                      <div id="trigger" class="bg-gray-300 p-4 cursor-pointer">
+                        Select Passengers
+                      </div>
+
+                      <!-- Dropdown div (initially hidden) -->
+                     <!-- Dropdown div (initially hidden) -->
+<div id="dropdown" class="absolute top-full left-0 mt-2 bg-white shadow-lg p-4 w-64 hidden">
+  <!-- Adult counter -->
+  <div class="flex justify-between items-center mb-4">
+    <span>Adults</span>
+    <div class="flex items-center">
+      <button type="button" id="adult-decrement" class="bg-red-500 text-white px-2 py-1">-</button>
+      <span id="adult-count" class="mx-4">0</span>
+      <button type="button" id="adult-increment" class="bg-green-500 text-white px-2 py-1">+</button>
+    </div>
+  </div>
+  <!-- Child counters and age selection -->
+  <div class="flex justify-between items-center mb-4">
+    <span>Children</span>
+    <div class="flex items-center">
+      <button type="button" id="child-decrement" class="bg-red-500 text-white px-2 py-1">-</button>
+      <span id="child-count" class="mx-4">0</span>
+      <button type="button" id="child-increment" class="bg-green-500 text-white px-2 py-1">+</button>
+    </div>
+  </div>
+  <!-- Age selection for each child -->
+  <div id="children-ages" class="mb-4">
+    <!-- This section will dynamically populate based on the number of children -->
+  </div>
+  <!-- Total count -->
+  <div class="flex justify-between items-center mt-4">
+    <span>Total Passengers</span>
+    <span id="total-count">0</span>
+  </div>
+</div>
+
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                   </div>
                 </form>
               </div>

@@ -263,8 +263,8 @@ function empty_value(element) {
     // Find the child with class 'searchList' and show it
     let searchListElement = cityElement.querySelector(".searchList");
     if (searchListElement) {
-      searchListElement.style.display = "block";
       // Equivalent to fadeIn
+      searchListElement.style.display = "block";
     }
 
     // Find the sibling elements with class 'city' and hide their 'searchList' elements
@@ -381,17 +381,17 @@ function SelectPlace(element) {
   // Find the closest parent with class 'city' and then find the child with class 'country' and set its value to the selected text
   var cityElement = element.closest(".city");
   if (cityElement) {
-    var countryElement = cityElement.querySelector(".departure1");
+    var countryElement = cityElement.querySelector(".country");
 
     if (
-      document.querySelector(".from") === countryElement &&
-      document.querySelector(".to").value === textSelected
+      document.querySelector(".departure") === countryElement &&
+      document.querySelector(".destination").value === textSelected
     ) {
       return;
     }
     if (
-      document.querySelector(".to") === countryElement &&
-      document.querySelector(".from").value === textSelected
+      document.querySelector(".destination") === countryElement &&
+      document.querySelector(".departure").value === textSelected
     ) {
       return;
     }
@@ -409,8 +409,8 @@ function SelectPlace(element) {
     // Find the child with class 'searchList' and hide it
     var searchListElement = cityElement.querySelector(".searchList");
     if (searchListElement) {
-      searchListElement.style.display = "none";
       // Equivalent to fadeOut
+      searchListElement.style.display = "none";
     }
 
     // Find the next sibling with class 'city' and trigger its 'onclick' event
@@ -429,7 +429,7 @@ document.addEventListener("click", function (event) {
   if (!event.target.closest(".searchList, .country, .selectCountry")) {
     var searchLists = document.querySelectorAll(".searchList");
     searchLists.forEach(function (searchList) {
-      // searchList.style.display = "none";
+      searchList.style.display = "none";
       // Equivalent to fadeOut
     });
   }
@@ -476,10 +476,10 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // route changer
-function change_route() {
+function change_route(element) {
   // Get the input elements
-  var fromInput = document.querySelector(".departure1.from");
-  var toInput = document.querySelector(".departure1.to");
+  var fromInput = element.closest("form").querySelector(".departure");
+  var toInput = element.closest("form").querySelector(".destination");
 
   var fromValue = fromInput.value;
   var toValue = toInput.value;
@@ -491,13 +491,6 @@ function change_route() {
 
   var fromId = fromInput.nextElementSibling.value;
   var toId = toInput.nextElementSibling.value;
-  // Get the current values
-  // Swap the ids
-  // var temp2 = fromId;
-  // fromId = toId;
-  // toId = temp2;
-
-  console.log(fromInput.nextElementSibling, toInput.nextElementSibling);
 
   fromInput.nextElementSibling.value = toId;
   toInput.nextElementSibling.value = fromId;
@@ -506,3 +499,133 @@ function change_route() {
   fromInput.value = fromValue;
   toInput.value = toValue;
 }
+
+// show passengers part
+
+document.addEventListener("DOMContentLoaded", function () {
+  const trigger = document.getElementById("trigger");
+  const dropdown = document.getElementById("dropdown");
+  const adultCountEl = document.getElementById("adult-count");
+  const childCountEl = document.getElementById("child-count");
+  const totalCountEl = document.getElementById("total-count");
+  const adultIncrement = document.getElementById("adult-increment");
+  const adultDecrement = document.getElementById("adult-decrement");
+  const childIncrement = document.getElementById("child-increment");
+  const childDecrement = document.getElementById("child-decrement");
+  const childrenAgesContainer = document.getElementById("children-ages");
+
+  let adultCount = 0;
+  let childCount = 0;
+  let childrenAges = []; // Array to store selected ages for children
+
+    const updateCounts = () => {
+      adultCountEl.textContent = adultCount;
+      childCountEl.textContent = childCount;
+      totalCountEl.textContent = adultCount + childCount;
+
+      // Update opacity and disabled state of decrement buttons based on count
+      adultDecrement.disabled = adultCount === 0;
+      adultDecrement.style.opacity = adultCount === 0 ? "0.5" : "1";
+
+      childDecrement.disabled = childCount === 0;
+      childDecrement.style.opacity = childCount === 0 ? "0.5" : "1";
+    };
+
+  const updateChildrenAgesSelect = () => {
+    childrenAgesContainer.innerHTML = ""; // Clear previous content
+
+    for (let i = 0; i < childCount; i++) {
+      const select = document.createElement("select");
+      select.classList.add(
+        "custom-select",
+        "px-4",
+        "py-2",
+        "h-10",
+        "w-32",
+        "mr-2"
+      );
+      select.setAttribute("name", `child${i + 1}-age`);
+
+      // Populate select options
+      const ageOptions = [
+        "تا 1 سال",
+        "1 تا 2 سال",
+        "2 تا 3 سال",
+        "3 تا 4 سال",
+        "4 تا 5 سال",
+        "5 تا 6 سال",
+        "6 تا 7 سال",
+        "7 تا 8 سال",
+        "8 تا 9 سال",
+        "9 تا 10 سال",
+        "10 تا 11 سال",
+        "11 تا 12 سال",
+      ];
+
+      ageOptions.forEach((optionText) => {
+        const option = document.createElement("option");
+        option.textContent = optionText;
+        option.value = optionText;
+        select.appendChild(option);
+      });
+
+      // Add select to container
+      childrenAgesContainer.appendChild(select);
+
+      // Save initial value to childrenAges array
+      childrenAges[i] = ageOptions[0]; // Default to first age option
+    }
+  };
+
+
+
+  const canIncrement = () => adultCount + childCount < 10;
+  const canDecrementChild = () => childCount > 0;
+  const canDecrementAdult = () => adultCount > 0 && childCount <= adultCount;
+
+  trigger.addEventListener("click", () => {
+    dropdown.classList.toggle("hidden");
+  });
+
+  adultIncrement.addEventListener("click", () => {
+    if (canIncrement()) {
+      adultCount++;
+      updateCounts();
+    }
+  });
+
+  adultDecrement.addEventListener("click", () => {
+    if (canDecrementAdult()) {
+      adultCount--;
+      if (childCount > adultCount) {
+        childCount = adultCount;
+        updateChildrenAgesSelect(); // Update children ages if child count changes
+      }
+      updateCounts();
+    }
+  });
+
+  childIncrement.addEventListener("click", () => {
+    if (
+      canIncrement() &&
+      adultCount > 0 &&
+      childCount < 4 &&
+      childCount < adultCount
+    ) {
+      childCount++;
+      updateChildrenAgesSelect(); // Update children ages when incrementing
+      updateCounts();
+    }
+  });
+
+  childDecrement.addEventListener("click", () => {
+    if (canDecrementChild()) {
+      childCount--;
+      updateChildrenAgesSelect(); // Update children ages when decrementing
+      updateCounts();
+    }
+  });
+
+  // Initialize children ages selection
+  updateChildrenAgesSelect();
+});
