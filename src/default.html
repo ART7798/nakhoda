@@ -265,7 +265,7 @@
                 id="Flight"
                 data-id="item-Flight"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'flight')"
+                onclick="openSearchTab(event, 'item-Flight')"
               >
                 پرواز
               </button>
@@ -273,7 +273,7 @@
                 id="Hotel"
                 data-id="item-Hotel"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'hotel')"
+                onclick="openSearchTab(event, 'item-Hotel')"
               >
                 هتل
               </button>
@@ -281,7 +281,7 @@
                 id="FlightHotel"
                 data-id="item-FlightHotel"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'flightHotel')"
+                onclick="openSearchTab(event, 'item-FlightHotel')"
               >
                 هتل و پرواز
               </button>
@@ -289,7 +289,7 @@
                 id="Tour"
                 data-id="item-Tour"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'tour')"
+                onclick="openSearchTab(event, 'item-Tour')"
               >
                 تور
               </button>
@@ -297,14 +297,14 @@
                 id="Insurance"
                 data-id="item-Insurance"
                 class="search-tab-link px-3 py-2 sm:px-8 sm:py-3 font-medium rounded-5 text-base md:text-2xl text-[#bbb] transition-all duration-300 hover:scale-105"
-                onclick="openSearchTab(event, 'insurance')"
+                onclick="openSearchTab(event, 'item-Insurance')"
               >
                 بیمه
               </button>
             </div>
             <!-- search tab contents -->
             <div>
-              <div id="flight" class="search-tab-content flex flex-col gap-5">
+              <div id="item-Flight" class="search-tab-content flex flex-col gap-5">
                 <!-- dropdowns -->
                 <div class="flex items-center gap-5 md:gap-[50px]">
                   <div class="relative">
@@ -427,13 +427,13 @@
                         required
                         aria-label="مبدا"
                         autocomplete="off"
-                        value="تهران - Tehran - همه فرودگاه ها"
+                        value=""
                         type="text"
                         placeholder="مبدا"
                         class="custom-input px-8 py-4 h-full w-full country departure FCD1"
                       />
                       <input
-                        value="1203548"
+                        value=""
                         class="co-id FCDid1 from"
                         type="hidden"
                         name="from"
@@ -442,7 +442,7 @@
                       <div class="searchList hidden absolute right-0 top-[110%] z-10">
                         <div class="countryFlight"></div>
                         <ul
-                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[240px]"
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-x-hidden overflow-y-auto min-w-[200px] w-max max-w-[240px] max-h-[240px] custom-scroll"
                         >
                           <li class="p-2 bg-gray-200">
                             <span>مسیرهای پرتردد</span>
@@ -483,13 +483,13 @@
                         required
                         aria-label="مقصد"
                         autocomplete="off"
-                        value="استانبول - Istanbul - همه فرودگاه ها"
+                        value=""
                         type="text"
                         placeholder="مقصد"
                         class="custom-input px-8 py-4 h-full w-full country destination FCD2"
                       />
                       <input
-                        value="1177676"
+                        value=""
                         class="co-id FCDid2 to"
                         type="hidden"
                         name="to"
@@ -498,7 +498,7 @@
                       <div class="searchList hidden absolute right-0 top-[110%] z-10">
                         <div class="countryFlight"></div>
                         <ul
-                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[240px]"
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-x-hidden overflow-y-auto min-w-[200px] w-max max-w-[240px] max-h-64 custom-scroll"
                         >
                           <li class="p-2 bg-gray-200">
                             <span>مسیرهای پرتردد</span>
@@ -597,19 +597,19 @@
                         class="cursor-pointer passenger_section custom-input px-4 py-4 xl:w-[190px] w-full h-14"
                         onclick="show_passengers(this)"
                       >
-                        <span class="count-passengers"
+                        <span class="count-passengers text-sm"
                           ><span class="count ml-2"> 1 </span
                           ><span class="">مسافر</span></span
                         >
                       </div>
 
                       <div
-                        class="CountPassenger hidden absolute w-full max-h-64 overflow-auto bg-lightwhite shadow-md py-4 px-2 text-xs z-20 top-[110%] rounded-2xl bg-white max-w-[240px]"
+                        class="CountPassenger custom-scroll hidden absolute w-[110%] max-h-64 overflow-auto bg-lightwhite shadow-md py-4 px-2 text-xs z-20 top-[110%] rounded-2xl bg-white max-w-[240px]"
                       >
                         <div class="item-CountPassenger-content p-2">
                           <div class="item-CountPassenger mb-4">
                             <div
-                              class="first-part-CountPassenger text-secondary mb-3"
+                              class="first-part-CountPassenger text-secondary mb-3 -mr-1 text-sm"
                             >
                               بزرگسال<span class="mr-1">(+12)</span>
                             </div>
@@ -642,7 +642,7 @@
                           </div>
                           <div class="item-CountPassenger mb-4">
                             <div
-                              class="first-part-CountPassenger text-secondary mb-3"
+                              class="first-part-CountPassenger text-secondary mb-3 -mr-1 text-sm"
                             >
                               کودک<span class="mr-1">(-11)</span>
                             </div>
@@ -697,29 +697,376 @@
                         جستجو
                       </button>
                     </div>
-                  
-
-
-
-
-
+                
                   </div>
                 </form>
               </div>
 
-              <div id="hotel" class="search-tab-content hidden">
-                <h2 class="text-xl font-bold">Tab 2 Content</h2>
-                <p class="mt-2">Content for Tab 2 goes here.</p>
+              <div id="item-Hotel" class="search-tab-content hidden flex-col gap-5">
+                 <form
+              id="hotel-form"
+              method="post"
+              action="/Tem3_Hotel_Search.bc"
+              data-form="hotel"
+              onsubmit="form_search_isSubmited(this,event)"
+                               class="flex gap-2 flex-wrap xl:flex-nowrap"
+
+            >
+              <div  class="relative w-full lg:w-[calc(20%-8px)]">
+                <div
+                  class="city relative w-full h-14"
+                >
+                  <input
+                    type="hidden"
+                    name="persiancurrent"
+                    class="persiancurrent"
+                    value
+                  />
+                  <input
+                    type="hidden"
+                    name="select-age"
+                    class="select-age-value"
+                    value="0"
+                  />
+
+                  <input
+                    type="text"
+                    required
+                    onclick="empty_value(this)"
+                    oninput="city_search(this)"
+                    onblur="set_city_search(this)"
+                    data-type="3"
+                    name="coHotel"
+                    placeholder="مقصد"
+                    class="custom-input px-8 py-4 h-14 w-full country departure"
+                    value=""
+                  />
+                  <input
+                    class="co-id from"
+                    value=""
+                    type="hidden"
+                    name="from"
+                    aria-label="co-id"
+                  />
+                  <span
+                    class="mini-loading max-lg:top-3 hidden absolute left-5 top-0"
+                    ><i class="fas fa-spinner"></i
+                  ></span>
+                  <div
+                    class="countryFlight absolute bg-lightwhite shadow-md text-sm w-full z-20 rounded-2xl"
+                  ></div>
+                  <div class="searchList hidden absolute right-0 top-[110%] z-10">
+                    <ul class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-x-hidden overflow-y-auto min-w-[200px] w-max max-w-[240px] max-h-[240px] custom-scroll">
+                      <li class="p-2 bg-gray-200">
+                            <span>مسیرهای پرتردد</span>
+                          </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1203548"
+                      >
+                        <span>تهران </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211110"
+                      >
+                        <span>کیش </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1177676"
+                      >
+                        <span>استانبول</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1192689"
+                      >
+                        <span>ایروان</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211083"
+                      >
+                        <span>مشهد</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1173505"
+                      >
+                        <span>دبی </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1168092"
+                      >
+                        <span>آنتالیا</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1189731"
+                      >
+                        <span>تفلیس </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211086"
+                      >
+                        <span>شیراز </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211084"
+                      >
+                        <span>اصفهان</span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1182348"
+                      >
+                        <span>مسکو </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1211085"
+                      >
+                        <span>تبریز </span>
+                      </li>
+                      <li
+                        class="bg-white py-3 px-2 cursor-pointer transition-all duratoin-300 hover:bg-gray-100 z-10 border-t"
+                        onclick="SelectPlace(this)"
+                        data-id="1168993"
+                      >
+                        <span>باکو </span>
+                      </li>
+                    </ul>
+                    <div class="clr"></div>
+                  </div>
+                </div>
               </div>
-              <div id="flightHotel" class="search-tab-content hidden">
+
+              <div
+                class="Basis_Date_Box flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] lg:w-[calc(40%-8px)]"
+              >
+                <div
+                  class="w-full xs:w-[calc(50%-4px)] grow"
+                >
+               
+
+                  <input
+                    type="text"
+                    class="custom-input px-4 py-4 w-full h-14 Basis_Date start_date"
+                    value
+                    placeholder="تاریخ ورود"
+                    onclick="Basis_Calendar(this,'6/30/2024')"
+                    data-lang="fa"
+                    data-active="0"
+                    data-cache="0"
+                    readonly
+                    required
+                    name="fdate"
+                  />
+                </div>
+                <div
+                  class="w-full xs:w-[calc(50%-4px)] grow"
+                >
+
+                  <input
+                    type="text"
+                    class="custom-input px-4 py-4 w-full h-14 Basis_Date end_date nextCalOpening"
+                    value
+                    placeholder="تاریخ خروج"
+                    onclick="Basis_Calendar(this,'6/30/2024')"
+                    data-lang="fa"
+                    data-active="0"
+                    data-cache="0"
+                    readonly
+                    name="tdate"
+                  />
+                </div>
+              </div>
+
+
+
+
+
+
+              <div class="w-full xs:w-[calc(50%-4px)] relative md:w-[calc(25%-6px)] lg:w-[calc(20%-8px)]">
+                <div
+                  class="cursor-pointer passenger_section custom-input px-4 py-4 w-full h-14"
+                  onclick="show_passengers(this)"
+                >
+                  
+
+
+                  <span
+                    class="count-passengers text-sm"
+                    ><span class="count ml-2"> 1 </span
+                    ><span class="ml-2">مسافر</span> -
+                    <span class="count-room ml-2"> 1 </span
+                    ><span class="ml-2">اتاق</span></span
+                  >
+                </div>
+                <div
+                  class="CountPassenger custom-scroll hidden absolute w-[110%] max-h-64 overflow-auto bg-lightwhite shadow-md py-4 px-2 text-xs z-20 top-[110%] rounded-2xl bg-white max-w-[240px]"
+                >
+                  <div class="item-CountPassenger-content p-2">
+                    <div class="item-CountPassenger mb-4">
+                      <div
+                        class="first-part-CountPassenger text-secondary mb-3"
+                      >
+                        تعداد اتاق
+                      </div>
+                      <div
+                        class="second-part-CountPassenger flex justify-between"
+                      >
+                        <div class="passenger-button plus-minus-room">
+                          <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                        </div>
+                        <div class="passenger-button text-base">
+                          <input
+                            type="text"
+                            name
+                            class="room text-center w-full leading-6"
+                            readonly
+                            value="1"
+                          />
+                        </div>
+                        <div class="passenger-button plus-minus-room">
+                         <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                        </div>
+                      </div>
+                      <div class="clr"></div>
+                    </div>
+                    <div class="ShowRow">
+                      <div class="contentRoom">
+                        <div class="RoomRow mb-3">اتاق 1</div>
+                        <div class="item-CountPassenger mb-4">
+                          <div
+                            class="first-part-CountPassenger text-secondary mb-3 -mr-1 text-sm"
+                          >
+                            بزرگسال<span class="mr-1">(+12)</span>
+                          </div>
+                          <div
+                            class="second-part-CountPassenger flex justify-between"
+                          >
+                            <div class="passenger-button plus-minus">
+                             <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                            </div>
+                            <div class="passenger-button text-base">
+                              <input
+                                type="text"
+                                name="_root.rooms__1.adultcount"
+                                class="adult adult-count text-center w-full leading-6"
+                                readonly
+                                value="1"
+                              />
+                            </div>
+                            <div class="passenger-button plus-minus">
+                              <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                            </div>
+                          </div>
+                          <div class="clr"></div>
+                        </div>
+                        <div class="item-CountPassenger mb-4">
+                          <div
+                            class="first-part-CountPassenger text-secondary mb-3 -mr-1 text-sm"
+                          >
+                            کودک<span class="mr-1">(-11)</span>
+                          </div>
+                          <div
+                            class="second-part-CountPassenger flex justify-between"
+                          >
+                            <div class="passenger-button plus-minus-ch">
+                              <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                            </div>
+                            <div class="passenger-button text-base">
+                              <input
+                                type="text"
+                                class="child-count text-center w-full leading-6"
+                                readonly
+                                value="0"
+                              />
+                            </div>
+                            <div class="passenger-button plus-minus-ch">
+                               <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                            </div>
+                          </div>
+                          <input
+                            type="hidden"
+                            value="0"
+                            class="childcountandage"
+                            name="_root.rooms__1.childcountandage"
+                          />
+                          <div class="clr"></div>
+                          <div class="section-select-age"></div>
+                          <div class="clr"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    type="button"
+                    class="confirm w-full text-center bg-secondary text-white rounded-md py-2 hover:bg-primary max-lg:w-full h-10 text-base"
+                  >
+                    تایید
+                  </button>
+                </div>
+              </div>
+             
+             
+              <button
+                        type="submit"
+                        class="secondary-btn px-4 py-4 h-14 w-full xs:w-[calc(50%-4px)] xl:w-[116px] md:w-[calc(25%-6px)] lg:w-[calc(20%-8px)]"
+                      >
+                        جستجو
+                      </button>
+            </form>
+              </div>
+
+
+
+
+
+              <div id="item-FlightHotel" class="search-tab-content hidden flex-col gap-5">
                 <h2 class="text-xl font-bold">Tab 3 Content</h2>
                 <p class="mt-2">Content for Tab 3 goes here.</p>
               </div>
-              <div id="tour" class="search-tab-content hidden">
+              <div id="item-Tour" class="search-tab-content hidden flex-col gap-5">
                 <h2 class="text-xl font-bold">Tab 4 Content</h2>
                 <p class="mt-2">Content for Tab 4 goes here.</p>
               </div>
-              <div id="insurance" class="search-tab-content hidden">
+              <div id="item-Insurance" class="search-tab-content hidden flex-col gap-5">
                 <h2 class="text-xl font-bold">Tab 5 Content</h2>
                 <p class="mt-2">Content for Tab 5 goes here.</p>
               </div>
