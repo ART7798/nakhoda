@@ -439,10 +439,10 @@
                         name="from"
                         aria-label="co-id"
                       />
-                      <div class="searchList hidden absolute right-0">
+                      <div class="searchList hidden absolute right-0 top-[110%] z-10">
                         <div class="countryFlight"></div>
                         <ul
-                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[280px]"
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[240px]"
                         >
                           <li class="p-2 bg-gray-200">
                             <span>مسیرهای پرتردد</span>
@@ -495,10 +495,10 @@
                         name="to"
                         aria-label="co-id"
                       />
-                      <div class="searchList hidden absolute right-0">
+                      <div class="searchList hidden absolute right-0 top-[110%] z-10">
                         <div class="countryFlight"></div>
                         <ul
-                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[280px]"
+                          class="ul-list flex flex-col bg-white rounded-10 shadow-lg overflow-hidden w-max max-w-[240px]"
                         >
                           <li class="p-2 bg-gray-200">
                             <span>مسیرهای پرتردد</span>
@@ -584,13 +584,111 @@
                     <div
                       class="flex gap-2 flex-wrap xl:flex-nowrap w-full md:w-[calc(50%-4px)] xl:w-auto"
                     >
-                      <div class="w-full xs:w-[calc(50%-4px)] xl:w-auto">
+                      <!-- <div class="w-full xs:w-[calc(50%-4px)] xl:w-auto">
                         <input
                           type="text"
                           placeholder="تعداد نفرات"
                           class="custom-input px-4 py-4 xl:w-[190px] w-full h-14"
                         />
+                      </div> -->
+                        <!-- passenger -->
+                    <div class="w-full xs:w-[calc(50%-4px)] xl:w-auto relative">
+                      <div
+                        class="cursor-pointer passenger_section custom-input px-4 py-4 xl:w-[190px] w-full h-14"
+                        onclick="show_passengers(this)"
+                      >
+                        <span class="count-passengers"
+                          ><span class="count ml-2"> 1 </span
+                          ><span class="">مسافر</span></span
+                        >
                       </div>
+
+                      <div
+                        class="CountPassenger hidden absolute w-full max-h-64 overflow-auto bg-lightwhite shadow-md py-4 px-2 text-xs z-20 top-[110%] rounded-2xl bg-white max-w-[240px]"
+                      >
+                        <div class="item-CountPassenger-content p-2">
+                          <div class="item-CountPassenger mb-4">
+                            <div
+                              class="first-part-CountPassenger text-secondary mb-3"
+                            >
+                              بزرگسال<span class="mr-1">(+12)</span>
+                            </div>
+                            <div
+                              class="second-part-CountPassenger flex justify-between"
+                            >
+                              <div class="passenger-button plus-minus">
+                                <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                              </div>
+                              <div class="passenger-button text-base">
+                                <input
+                                  type="text"
+                                  name="adult"
+                                  class="adult adult-count text-center w-full leading-6"
+                                  readonly
+                                  value="1"
+                                />
+                              </div>
+                              <div class="passenger-button plus-minus">
+                                <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                              </div>
+                            </div>
+                            <div class="clr"></div>
+                          </div>
+                          <div class="item-CountPassenger mb-4">
+                            <div
+                              class="first-part-CountPassenger text-secondary mb-3"
+                            >
+                              کودک<span class="mr-1">(-11)</span>
+                            </div>
+                            <div
+                              class="second-part-CountPassenger flex justify-between"
+                            >
+                              <div class="passenger-button plus-minus-ch">
+                                <span
+                                  class="plus-btn w-6 h-6 leading-6 bg-primary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >+</span
+                                >
+                              </div>
+                              <div class="passenger-button text-base">
+                                <input
+                                  type="text"
+                                  class="child-count text-center w-full leading-6"
+                                  readonly
+                                  value="0"
+                                />
+                              </div>
+                              <div class="passenger-button plus-minus-ch">
+                                <span
+                                  class="minus-btn w-6 h-6 leading-6 bg-secondary rounded-md text-center cursor-pointer text-white inline-block text-xl scale-150"
+                                  >-</span
+                                >
+                              </div>
+                            </div>
+                            <input
+                              type="hidden"
+                              value
+                              class="child"
+                              name="child"
+                            />
+                            <div class="clr"></div>
+                            <div class="section-select-age flex flex-col gap-4 pt-2 my-2"></div>
+                            <div class="clr"></div>
+                          </div>
+                        </div>
+                        <button
+                          type="button"
+                          class="confirm w-full text-center bg-secondary text-white rounded-md py-2 hover:bg-primary max-lg:w-full h-10 text-base"
+                        >
+                          تایید
+                        </button>
+                      </div>
+                    </div>
 
                       <button
                         type="submit"
@@ -599,56 +697,7 @@
                         جستجو
                       </button>
                     </div>
-                    <!-- passenger -->
-                    <!-- Main container -->
-                    <div class="relative p-4">
-                      <!-- Trigger div -->
-                      <div id="trigger" class="bg-gray-300 p-4 cursor-pointer">
-                        Select Passengers
-                      </div>
-
-                      <!-- Dropdown div (initially hidden) -->
-                     <!-- Dropdown div (initially hidden) -->
-<div id="dropdown" class="absolute top-full left-0 mt-2 bg-white shadow-lg p-4 w-64 hidden">
-  <!-- Adult counter -->
-  <div class="flex justify-between items-center mb-4">
-    <span>Adults</span>
-    <div class="flex items-center">
-      <button type="button" id="adult-decrement" class="bg-red-500 text-white px-2 py-1">-</button>
-      <span id="adult-count" class="mx-4">0</span>
-      <button type="button" id="adult-increment" class="bg-green-500 text-white px-2 py-1">+</button>
-    </div>
-  </div>
-  <!-- Child counters and age selection -->
-  <div class="flex justify-between items-center mb-4">
-    <span>Children</span>
-    <div class="flex items-center">
-      <button type="button" id="child-decrement" class="bg-red-500 text-white px-2 py-1">-</button>
-      <span id="child-count" class="mx-4">0</span>
-      <button type="button" id="child-increment" class="bg-green-500 text-white px-2 py-1">+</button>
-    </div>
-  </div>
-  <!-- Age selection for each child -->
-  <div id="children-ages" class="mb-4">
-    <!-- This section will dynamically populate based on the number of children -->
-  </div>
-  <!-- Total count -->
-  <div class="flex justify-between items-center mt-4">
-    <span>Total Passengers</span>
-    <span id="total-count">0</span>
-  </div>
-</div>
-
-                    </div>
-
-
-
-
-
-
-
-
-
+                  
 
 
 

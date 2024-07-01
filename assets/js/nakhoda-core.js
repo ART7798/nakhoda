@@ -442,7 +442,7 @@ document.addEventListener("click", function (event) {
   ) {
     var countPassengers = document.querySelectorAll(".CountPassenger");
     countPassengers.forEach(function (countPassenger) {
-      // countPassenger.style.display = "none";
+      countPassenger.style.display = "none";
       // Equivalent to fadeOut
     });
   }
@@ -502,130 +502,268 @@ function change_route(element) {
 
 // show passengers part
 
-document.addEventListener("DOMContentLoaded", function () {
-  const trigger = document.getElementById("trigger");
-  const dropdown = document.getElementById("dropdown");
-  const adultCountEl = document.getElementById("adult-count");
-  const childCountEl = document.getElementById("child-count");
-  const totalCountEl = document.getElementById("total-count");
-  const adultIncrement = document.getElementById("adult-increment");
-  const adultDecrement = document.getElementById("adult-decrement");
-  const childIncrement = document.getElementById("child-increment");
-  const childDecrement = document.getElementById("child-decrement");
-  const childrenAgesContainer = document.getElementById("children-ages");
+// document.addEventListener("DOMContentLoaded", function () {
+//   const trigger = document.getElementById("trigger");
+//   const dropdown = document.getElementById("dropdown");
+//   const adultCountEl = document.getElementById("adult-count");
+//   const childCountEl = document.getElementById("child-count");
+//   const totalCountEl = document.getElementById("total-count");
+//   const adultIncrement = document.getElementById("adult-increment");
+//   const adultDecrement = document.getElementById("adult-decrement");
+//   const childIncrement = document.getElementById("child-increment");
+//   const childDecrement = document.getElementById("child-decrement");
+//   const childrenAgesContainer = document.getElementById("children-ages");
 
-  let adultCount = 0;
-  let childCount = 0;
-  let childrenAges = []; // Array to store selected ages for children
+//   let adultCount = 0;
+//   let childCount = 0;
+//   let childrenAges = []; // Array to store selected ages for children
 
-    const updateCounts = () => {
-      adultCountEl.textContent = adultCount;
-      childCountEl.textContent = childCount;
-      totalCountEl.textContent = adultCount + childCount;
+//     const updateCounts = () => {
+//       adultCountEl.textContent = adultCount;
+//       childCountEl.textContent = childCount;
+//       totalCountEl.textContent = adultCount + childCount;
 
-      // Update opacity and disabled state of decrement buttons based on count
-      adultDecrement.disabled = adultCount === 0;
-      adultDecrement.style.opacity = adultCount === 0 ? "0.5" : "1";
+//       // Update opacity and disabled state of decrement buttons based on count
+//       adultDecrement.disabled = adultCount === 0;
+//       adultDecrement.style.opacity = adultCount === 0 ? "0.5" : "1";
 
-      childDecrement.disabled = childCount === 0;
-      childDecrement.style.opacity = childCount === 0 ? "0.5" : "1";
-    };
+//       childDecrement.disabled = childCount === 0;
+//       childDecrement.style.opacity = childCount === 0 ? "0.5" : "1";
+//     };
 
-  const updateChildrenAgesSelect = () => {
-    childrenAgesContainer.innerHTML = ""; // Clear previous content
+//   const updateChildrenAgesSelect = () => {
+//     childrenAgesContainer.innerHTML = ""; // Clear previous content
 
-    for (let i = 0; i < childCount; i++) {
-      const select = document.createElement("select");
-      select.classList.add(
-        "custom-select",
-        "px-4",
-        "py-2",
-        "h-10",
-        "w-32",
-        "mr-2"
-      );
-      select.setAttribute("name", `child${i + 1}-age`);
+//     for (let i = 0; i < childCount; i++) {
+//       const select = document.createElement("select");
+//       select.classList.add(
+//         "custom-select",
+//         "px-4",
+//         "py-2",
+//         "h-10",
+//         "w-32",
+//         "mr-2"
+//       );
+//       select.setAttribute("name", `child${i + 1}-age`);
 
-      // Populate select options
-      const ageOptions = [
-        "تا 1 سال",
-        "1 تا 2 سال",
-        "2 تا 3 سال",
-        "3 تا 4 سال",
-        "4 تا 5 سال",
-        "5 تا 6 سال",
-        "6 تا 7 سال",
-        "7 تا 8 سال",
-        "8 تا 9 سال",
-        "9 تا 10 سال",
-        "10 تا 11 سال",
-        "11 تا 12 سال",
-      ];
+//       // Populate select options
+//       const ageOptions = [
+//         "تا 1 سال",
+//         "1 تا 2 سال",
+//         "2 تا 3 سال",
+//         "3 تا 4 سال",
+//         "4 تا 5 سال",
+//         "5 تا 6 سال",
+//         "6 تا 7 سال",
+//         "7 تا 8 سال",
+//         "8 تا 9 سال",
+//         "9 تا 10 سال",
+//         "10 تا 11 سال",
+//         "11 تا 12 سال",
+//       ];
 
-      ageOptions.forEach((optionText) => {
-        const option = document.createElement("option");
-        option.textContent = optionText;
-        option.value = optionText;
-        select.appendChild(option);
-      });
+//       ageOptions.forEach((optionText) => {
+//         const option = document.createElement("option");
+//         option.textContent = optionText;
+//         option.value = optionText;
+//         select.appendChild(option);
+//       });
 
-      // Add select to container
-      childrenAgesContainer.appendChild(select);
+//       // Add select to container
+//       childrenAgesContainer.appendChild(select);
 
-      // Save initial value to childrenAges array
-      childrenAges[i] = ageOptions[0]; // Default to first age option
-    }
-  };
+//       // Save initial value to childrenAges array
+//       childrenAges[i] = ageOptions[0]; // Default to first age option
+//     }
+//   };
 
 
 
-  const canIncrement = () => adultCount + childCount < 10;
-  const canDecrementChild = () => childCount > 0;
-  const canDecrementAdult = () => adultCount > 0 && childCount <= adultCount;
+//   const canIncrement = () => adultCount + childCount < 10;
+//   const canDecrementChild = () => childCount > 0;
+//   const canDecrementAdult = () => adultCount > 0 && childCount <= adultCount;
 
-  trigger.addEventListener("click", () => {
-    dropdown.classList.toggle("hidden");
+//   trigger.addEventListener("click", () => {
+//     dropdown.classList.toggle("hidden");
+//   });
+
+//   adultIncrement.addEventListener("click", () => {
+//     if (canIncrement()) {
+//       adultCount++;
+//       updateCounts();
+//     }
+//   });
+
+//   adultDecrement.addEventListener("click", () => {
+//     if (canDecrementAdult()) {
+//       adultCount--;
+//       if (childCount > adultCount) {
+//         childCount = adultCount;
+//         updateChildrenAgesSelect(); // Update children ages if child count changes
+//       }
+//       updateCounts();
+//     }
+//   });
+
+//   childIncrement.addEventListener("click", () => {
+//     if (
+//       canIncrement() &&
+//       adultCount > 0 &&
+//       childCount < 4 &&
+//       childCount < adultCount
+//     ) {
+//       childCount++;
+//       updateChildrenAgesSelect(); // Update children ages when incrementing
+//       updateCounts();
+//     }
+//   });
+
+//   childDecrement.addEventListener("click", () => {
+//     if (canDecrementChild()) {
+//       childCount--;
+//       updateChildrenAgesSelect(); // Update children ages when decrementing
+//       updateCounts();
+//     }
+//   });
+
+//   // Initialize children ages selection
+//   updateChildrenAgesSelect();
+// });
+
+
+
+
+
+function show_passengers(element) {
+  element.closest("form").querySelector(".CountPassenger").style.display =
+    "block";
+}
+
+document.querySelectorAll(".confirm").forEach(function (button) {
+  button.addEventListener("click", function () {
+    button.closest(".CountPassenger").style.display = "none";
   });
-
-  adultIncrement.addEventListener("click", () => {
-    if (canIncrement()) {
-      adultCount++;
-      updateCounts();
-    }
-  });
-
-  adultDecrement.addEventListener("click", () => {
-    if (canDecrementAdult()) {
-      adultCount--;
-      if (childCount > adultCount) {
-        childCount = adultCount;
-        updateChildrenAgesSelect(); // Update children ages if child count changes
-      }
-      updateCounts();
-    }
-  });
-
-  childIncrement.addEventListener("click", () => {
-    if (
-      canIncrement() &&
-      adultCount > 0 &&
-      childCount < 4 &&
-      childCount < adultCount
-    ) {
-      childCount++;
-      updateChildrenAgesSelect(); // Update children ages when incrementing
-      updateCounts();
-    }
-  });
-
-  childDecrement.addEventListener("click", () => {
-    if (canDecrementChild()) {
-      childCount--;
-      updateChildrenAgesSelect(); // Update children ages when decrementing
-      updateCounts();
-    }
-  });
-
-  // Initialize children ages selection
-  updateChildrenAgesSelect();
 });
+
+document.querySelectorAll(".plus-minus").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var input = button.closest(".item-CountPassenger").querySelector("input");
+    var oldVal = parseInt(input.value);
+    var newVal = button.textContent.includes("+")
+      ? oldVal + 1
+      : oldVal > 0
+      ? oldVal - 1
+      : 0;
+
+    if (newVal >= 2) {
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.add("minus-btn-active");
+    }
+    if (newVal < 2) {
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.remove("minus-btn-active");
+    }
+    if (newVal >= 10 || newVal < 1) return;
+
+    input.value = newVal;
+    var passengers_count =
+      parseInt(button.closest("form").querySelector(".child-count").value) +
+      parseInt(newVal);
+    button
+      .closest("form")
+      .querySelector(".count-passengers .count").textContent = passengers_count;
+  });
+});
+
+document.querySelectorAll(".plus-minus-ch").forEach(function (button) {
+  button.addEventListener("click", function () {
+    var input = button.closest(".item-CountPassenger").querySelector("input");
+    var oldVal = parseInt(input.value);
+    var newVal = button.textContent.includes("+")
+      ? oldVal + 1
+      : oldVal > 0
+      ? oldVal - 1
+      : 0;
+
+    if (newVal >= 1) {
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.add("minus-btn-active");
+    }
+    if (newVal < 1) {
+      button
+        .closest(".item-CountPassenger")
+        .querySelector(".minus-btn")
+        .classList.remove("minus-btn-active");
+    }
+    if (newVal >= 5) return;
+
+    input.value = newVal;
+    var childInput = button
+      .closest(".item-CountPassenger")
+      .querySelector(".child");
+    childInput.value = newVal == 0 ? newVal : newVal + ",";
+
+    var passengers_count =
+      parseInt(button.closest("form").querySelector(".adult").value) +
+      parseInt(newVal);
+    button
+      .closest("form")
+      .querySelector(".count-passengers .count").textContent = passengers_count;
+
+    var sectionSelectAge = button
+      .closest(".item-CountPassenger")
+      .querySelector(".section-select-age");
+    if (oldVal < newVal) {
+      sectionSelectAge.appendChild(createChildDropdown(newVal));
+    } else if (oldVal > newVal) {
+      destroyChildDropdown(sectionSelectAge, newVal);
+    }
+  });
+});
+
+function createChildDropdown(i) {
+  var childDropdown = document.createElement("div");
+  childDropdown.className = "createChildDropdown";
+
+  var label = document.createElement("label");
+  label.setAttribute("for", "childDropdown-" + i);
+  label.textContent = "سن کودک " + i;
+  childDropdown.appendChild(label);
+
+  var select = document.createElement("select");
+  childDropdown.appendChild(select);
+
+  var options = [
+    "تا 1 سال",
+    "1 تا 2",
+    "2 تا 3",
+    "3 تا 4",
+    "4 تا 5",
+    "5 تا 6",
+    "6 تا 7",
+    "7 تا 8",
+    "8 تا 9",
+    "9 تا 10",
+    "10 تا 11",
+    "11 تا 12",
+  ];
+  options.forEach(function (option, index) {
+    var optionElement = document.createElement("option");
+    optionElement.textContent = option;
+    optionElement.setAttribute("value", index + 1);
+    select.appendChild(optionElement);
+  });
+
+  return childDropdown;
+}
+
+function destroyChildDropdown(element, i) {
+  var dropdowns = element.querySelectorAll("div.createChildDropdown");
+  if (dropdowns[i]) dropdowns[i].remove();
+}

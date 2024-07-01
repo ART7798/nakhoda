@@ -511,3 +511,18 @@ input {
 .footer-bg-logo {
   z-index: -1;
 }
+
+
+.createChildDropdown{
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.createChildDropdown select{
+  padding:8px;
+  border-radius:16px;
+  -webkit-border-radius:16px;
+  -moz-border-radius:16px;
+  -ms-border-radius:16px;
+  -o-border-radius:16px;
+}
